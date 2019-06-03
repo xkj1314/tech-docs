@@ -1,6 +1,6 @@
 baseURL = "https://sbcloud.github.io/tech-docs/"
-hasCJKLanguage = true
-languageCode = "ja-jp"
+#hasCJKLanguage = true
+#languageCode = "ja-jp"
 title = "SBCloud Documentation"
 theme= "hugo-theme-learn"
 staticDir = ["static"]

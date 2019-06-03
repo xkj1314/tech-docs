@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ガイドライン on SBCloud Documentation</title>
+    <link>https://sbcloud.github.io/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</link>
+    <description>Recent content in ガイドライン on SBCloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 14 May 2019 10:37:37 +0900</lastBuildDate>
+    
+	<atom:link href="https://sbcloud.github.io/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>第5章 権限管理</title>
+      <link>https://sbcloud.github.io/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/authority_management/</link>
+      <pubDate>Tue, 14 May 2019 10:37:37 +0900</pubDate>
+      
+      <guid>https://sbcloud.github.io/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/authority_management/</guid>
+      <description>AAlibabaCloudはどのサービスを利用・操作するにしろ権限が必要です。 Terraformで作成したリソースサービスにも他ユーザが操作できるように権限アタッチが必要になります。 本章では、AlibabaCloudサービスに対する権限付与の方法を学びます。
+5.1 Alibaba CloudのRAMについて RAM（Resource Access Management）はユーザーID の管理とアクセス制御、権限管理のためのサービスです。 RAMを使用することで、ユーザーアカウント (従業員、システム、アプリケーションなど) を作成および管理し、Alibaba Cloud アカウントのリソースに対してそのユーザーアカウントが所有する操作権限を制御できます。Terraformによるリソースを実行するときはRAMで実行権限が必須です。
+5.2 RAMロールとRAMユーザーの違い ・RAMロールは仮想ID であり、固定のIDは持っていますが、ID認証情報アクセスキーを持ちません。 ・RAMユーザは、固定のIDとID認証アクセスキーを持つ実際のIDであり、一般的には、特定のユーザーまたはアプリケーションに対応します。
+graph LR; A(&amp;quot;ポリシーサービスに&amp;lt;br&amp;gt;対する権限&amp;quot;)-.-&amp;gt;B(&amp;quot;RAMポリシーを&amp;lt;br&amp;gt;ロールにアタッチ&amp;quot;) A(&amp;quot;ポリシーサービスに&amp;lt;br&amp;gt;対する権限&amp;quot;)-.-&amp;gt;C(&amp;quot;RAMポリシーを&amp;lt;br&amp;gt;ユーザにアタッチ&amp;quot;) B(&amp;quot;RAMポリシーを&amp;lt;br&amp;gt;ロールにアタッチ&amp;quot;)-.-&amp;gt;D(&amp;quot;ロール(役割)&amp;quot;) C(&amp;quot;RAMポリシーを&amp;lt;br&amp;gt;ユーザにアタッチ&amp;quot;)-.-&amp;gt;E(&amp;quot;ユーザ(人)&amp;quot;) D(&amp;quot;ロール(役割)&amp;quot;)-.-&amp;gt;F(&amp;quot;ロール(役割)を&amp;lt;br&amp;gt;エンティティ(ECSインスタンスなど）にアタッチ&amp;quot;) A(&amp;quot;ポリシーサービスに&amp;lt;br&amp;gt;対する権限&amp;quot;)-.-&amp;gt;G(&amp;quot;RAMポリシーを&amp;lt;br&amp;gt;グループにアタッチ&amp;quot;) G(&amp;quot;RAMポリシーを&amp;lt;br&amp;gt;グループにアタッチ&amp;quot;)-.-&amp;gt;H(&amp;quot;グループ（ユーザの集まり）&amp;quot;)  RAMロールは権限が付与された実際のユーザーが引き受ける必要があります。ロールを引き受けると実際のユーザーはこのRAMロールの一時セキュリティトークンを受け取ります。これにより、この一時セキュリティトークンを使用して、ロールに許可されているリソースにアクセスできます。
+普段の利用時はRAMユーザで管理・運用していくのがベストプラクティスですが、Terraform利用時は基本的にAdministratorAccessが必要となります。
+5.3 ポリシー 権限はポリシーで定義します。ポリシーでは「実行可能なアクション」や「操作可能なリソース」を指定でき、柔軟に権限が設定できます。
+5.3.1 ポリシードキュメント ポリシードキュメントはJSON形式で管理しており、リスト5.3.1.1のようにまとめます。 ▼リスト 5.3.1.1 JSON 形式のポリシードキュメント
+{ &amp;quot;Statement&amp;quot;: [ { &amp;quot;Action&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;*&amp;quot; } ], &amp;quot;Version&amp;quot;: &amp;quot;1&amp;quot; }  ポリシードキュメントでは、次のような要素を記述します。 * Effect - 許可する場合はAllow、許可しない場合はDeny * Resource - AlibabaCloudの操作可能なリソース・許可されたオブジェクトはなにかを指定します。たとえば ”ユーザAがリソースSampleBucketに対してGetBucket操作を実行できる” という権限付与ポリシーの場合、ResourceはSampleBucket です。 * Action - AlibabaCloudの各種サービスでどんな操作が実行できるか。サービスを個別指定することも可能。たとえば ”ユーザAがリソースSampleBucketに対してGetBucket操作を実行できる” という権限付与ポリシーの場合、ActionはGetBucket です。 * Condition - 権限付与が有効になる条件です。たとえば、”ユーザAが2018年12月31日より前にリソース SampleBucketに対してGetBucket操作を実行できる” という権限付与ポリシーの場合、Conditionは 2018年12月31日より前 です。</description>
+    </item>
+    
+  </channel>
+</rss>

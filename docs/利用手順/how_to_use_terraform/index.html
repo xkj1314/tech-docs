@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/tech-docs/images/favicon.png" type="image/png">
+
+    <title>第3章 Terraform の基本 :: SBCloud Documentation</title>
+
+    
+    <link href="/tech-docs/css/nucleus.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/fontawesome-all.min.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/hybrid.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/featherlight.min.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/perfect-scrollbar.min.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/auto-complete.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/atom-one-dark-reasonable.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/theme.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/hugo-theme.css?1559536555" rel="stylesheet">
+    
+      <link href="/tech-docs/css/theme-blue.css?1559536555" rel="stylesheet">
+    
+
+    <script src="/tech-docs/js/jquery-3.3.1.min.js?1559536555"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <style type="text/css">
+     
+ 
+.topnav {
+  position: relative;
+  background-color: #333;
+  overflow: hidden;
+}
+
+ 
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  z-index: 3;
+}
+
+ 
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+ 
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+  </head>
+  <body class="" data-url="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/how_to_use_terraform/">
+    <img src="http://localhost/SBC_HEADER.png" alt="ヘッダー">
+
+    <nav id="sidebar" class="">
+
+
+
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/" title="ガイドライン" class="dd-item 
+        
+        
+        ">
+      <a href="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/">
+          ガイドライン
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/authority_management/" title="第5章 権限管理" class="dd-item ">
+        <a href="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/authority_management/">
+        第5章 権限管理
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/" title="利用手順" class="dd-item 
+        parent
+        
+        ">
+      <a href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/">
+          利用手順
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/create-virtual-servers/" title="第1章 ECSインスタンスの作成" class="dd-item ">
+        <a href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/create-virtual-servers/">
+        第1章 ECSインスタンスの作成
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/how_to_use_terraform/" title="第3章 Terraform の基本" class="dd-item active">
+        <a href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/how_to_use_terraform/">
+        第3章 Terraform の基本
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/" title="比較資料" class="dd-item 
+        
+        
+        ">
+      <a href="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/">
+          比較資料
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/simple_compare/" title="云计算基础(クラウドコンピューティングの基盤)" class="dd-item ">
+        <a href="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/simple_compare/">
+        云计算基础(クラウドコンピューティングの基盤)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/tech-docs/'>SBCloud Documentation</a> > <a href='/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/'>利用手順</a> > 第3章 Terraform の基本
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#3-1-ディレクトリ-ファイル構成">3.1 ディレクトリ・ファイル構成</a></li>
+<li><a href="#3-2-リソースの作成">3.2 リソースの作成</a>
+<ul>
+<li><a href="#3-2-1-hcl-hashicorp-configuration-language">3.2.1 HCL (HashiCorp Configuration Language)</a></li>
+<li><a href="#3-2-2-alibabacloudリソースの意味と説明">3.2.2 AlibabaCloudリソースの意味と説明</a>
+<ul>
+<li><a href="#3-2-2-1-variable-xxxxx-外部変数">3.2.2.1 variable &ldquo;xxxxx&rdquo; {} （外部変数）</a></li>
+<li><a href="#3-2-2-2-provider">3.2.2.2 provider</a></li>
+<li><a href="#3-2-2-3-vpc">3.2.2.3 VPC</a></li>
+<li><a href="#3-2-2-4-vpc-switch">3.2.2.4 VPC_SWITCH</a></li>
+<li><a href="#3-2-2-5-セキュリティグループ">3.2.2.5 セキュリティグループ</a></li>
+<li><a href="#3-2-2-6-セキュリティグループルールリソース">3.2.2.6 セキュリティグループルールリソース</a></li>
+<li><a href="#3-2-2-7-ecsインスタンスリソース">3.2.2.7 ECSインスタンスリソース</a></li>
+<li><a href="#3-2-2-8-他のリソースについて">3.2.2.8 他のリソースについて</a></li>
+</ul></li>
+<li><a href="#3-2-3-terraform-init">3.2.3 terraform init</a></li>
+<li><a href="#3-2-4-terraform-plan">3.2.4 terraform plan</a></li>
+<li><a href="#3-2-5-terraform-apply">3.2.5 terraform apply</a></li>
+<li><a href="#3-2-6-リソースの設定変更">3.2.6 リソースの設定変更</a></li>
+<li><a href="#3-2-7-リソースの再作成">3.2.7 リソースの再作成</a></li>
+</ul></li>
+<li><a href="#3-3-terraform-の構成要素">3.3 Terraform の構成要素</a>
+<ul>
+<li><a href="#3-3-1-configuration-syntax">3.3.1 Configuration Syntax</a></li>
+<li><a href="#3-3-2-interpolation-syntax">3.3.2 Interpolation Syntax</a></li>
+<li><a href="#3-3-3-外部変数">3.3.3 外部変数</a></li>
+<li><a href="#3-3-4-ローカル値">3.3.4 ローカル値</a></li>
+<li><a href="#3-3-5-アウトプット">3.3.5 アウトプット</a></li>
+<li><a href="#3-3-6-条件分岐">3.3.6 条件分岐</a></li>
+<li><a href="#3-3-7-組み込み関数">3.3.7 組み込み関数</a></li>
+<li><a href="#3-3-8-モジュール">3.3.8 モジュール</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              第3章 Terraform の基本
+            </h1>
+          
+
+        
+
+
+
+
+
+<p>本章では Terraform の基本、使い方を学びます。 簡単なWebサーバを立ち上げながら、Terraformの流れや中身を確認します。</p>
+
+<h2 id="3-1-ディレクトリ-ファイル構成">3.1 ディレクトリ・ファイル構成</h2>
+
+<p>Terraformのファイルの拡張子は <code>*.tf</code> です。
+実行時、同じディレクトリの <code>*.tf</code> ファイルがマージされますので、以下3ファイルに分けてそれぞれの用途・目的に応じた記載・運用がベターです。</p>
+
+<pre><code>main.tf  … モジュールが内包するリソース、データソースなどの定義
+outputs.tf  … モジュールが出力するAttributeの定義
+variables.tf  … モジュールが受け取る変数の定義
+</code></pre>
+
+<p><code>main.tf</code> には どのプロパイダを使うかを記載します。
+階層化は任意ですが、.tfから別のフォルダの.tfに記載されてる変数を取り出すためにルートディレクトリを指定することがありますのでそこは注意が必要です。apply (=実行) にて分離実行することも可能です。</p>
+
+<pre><code>├── main.tf
+├── output.tf
+├── variables.tf
+│
+├── region
+│├── VPC
+││├── main.tf
+││├── output.tf
+││└── variables.tf
+││
+│├── ECS
+││├── main.tf
+││├── output.tf
+││└── variables.tf
+　・
+　・
+　・
+</code></pre>
+
+<p>RAMなど他者へ渡したくない情報がある場合、別途設定ファイル（ <code>terraform.confing</code> など）へ記載し、実行時は -var-file引数で 設定ファイルを読み取り実行することができます。</p>
+
+<p>▼リスト 3.1.1 設定ファイル <code>terraform.confing</code> の中身</p>
+
+<pre><code>access_key = &quot;xxxxxxxxxxxxxxxxxx&quot;
+secret_key = &quot;xxxxxxxxxxxxxxxxxx&quot;
+region = &quot;ap-northeast-1&quot;
+zone = &quot;ap-northeast-1a&quot;
+</code></pre>
+
+<p>記載した設定ファイル<code>terraform.confing</code> を紐つけて実行するには以下のコマンドで実行します。詳細は3.2.3 - 3.2.5にて後述します。</p>
+
+<p>▼リスト 3.1.2 設定ファイル<code>terraform.confing</code> を紐つけて実行する方法</p>
+
+<pre><code>$ terraform plan -var-file=&quot;terraform.confing&quot;
+$ terraform apply -var-file=&quot;terraform.confing&quot;
+</code></pre>
+
+<h2 id="3-2-リソースの作成">3.2 リソースの作成</h2>
+
+<p>事前準備として、まずは適当なディレクトリに <code>main.tf</code> というファイルを作ります。</p>
+
+<p>▼リスト 3.2 リソースの作成</p>
+
+<pre><code>$ mkdir ECS
+$ cd ECS
+$ touch main.tf
+</code></pre>
+
+<h3 id="3-2-1-hcl-hashicorp-configuration-language">3.2.1 HCL (HashiCorp Configuration Language)</h3>
+
+<p>Terraformのコードは HashiCorp社が設計したHCL(HashiCorp Configuration Language)という言語で実装しています。VPCやセキュリティグループ、ECSインスタンスのようなリソースは「resource」ブロックで定義します。</p>
+
+<p>3.2 で作成した <code>main.tf</code> をエディタで開き、リスト 3.2.1 のように実装します。このコードはAlibaba CloudとしてVPC作成、セキュリティグループ設定、CentOS 7.3 のImageID をベースとしたECSインスタンスを作成します。</p>
+
+<p>▼リスト 3.2.1 ECS インスタンス起動 <code>main.tf</code> の中身</p>
+
+<pre><code>variable &quot;access_key&quot; {}
+variable &quot;secret_key&quot; {}
+variable &quot;region&quot; {}
+variable &quot;zone&quot; {}
+
+provider &quot;alicloud&quot; {
+  access_key = &quot;${var.access_key}&quot;
+  secret_key = &quot;${var.secret_key}&quot;
+  region = &quot;${var.region}&quot;
+}
+
+resource &quot;alicloud_vpc&quot; &quot;vpc&quot; {
+  name = &quot;ECS_instance_for_terraform-vpc&quot;
+  cidr_block = &quot;192.168.1.0/24&quot;
+}
+
+resource &quot;alicloud_vswitch&quot; &quot;vsw&quot; {
+  vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
+  cidr_block        = &quot;192.168.1.0/28&quot;
+  availability_zone = &quot;${var.zone}&quot;
+}
+
+resource &quot;alicloud_security_group&quot; &quot;sg&quot; {
+  name   = &quot;ECS_instance_for_terraform-sg&quot;
+  vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
+}
+
+resource &quot;alicloud_security_group_rule&quot; &quot;allow_http&quot; {
+  type              = &quot;ingress&quot;
+  ip_protocol       = &quot;tcp&quot;
+  nic_type          = &quot;intranet&quot;
+  policy            = &quot;accept&quot;
+  port_range        = &quot;80/80&quot;
+  priority          = 1
+  security_group_id = &quot;${alicloud_security_group.sg.id}&quot;
+  cidr_ip           = &quot;0.0.0.0/0&quot;
+}
+
+resource &quot;alicloud_instance&quot; &quot;ECS_instance&quot; {
+  instance_name   = &quot;ECS_instance_for_terraform&quot;
+  host_name       = &quot;ECS_instance_for_terraform&quot;
+  instance_type   = &quot;ecs.n4.small&quot;
+  image_id        = &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  security_groups = [&quot;${alicloud_security_group.sg.id}&quot;]
+  availability_zone = &quot;${var.zone}&quot;
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+}
+</code></pre>
+
+<h3 id="3-2-2-alibabacloudリソースの意味と説明">3.2.2 AlibabaCloudリソースの意味と説明</h3>
+
+<p>上記リスト 3.2.1で作成したAlibabaCloudリソースについて説明します。
+Terraformに各種リソースを作成させるのは<code>resource</code>変数です。<code>resource</code>変数はリソース名と識別名を指定し、括弧の中にて実行内容を記載します。</p>
+
+<h4 id="3-2-2-1-variable-xxxxx-外部変数">3.2.2.1 variable &ldquo;xxxxx&rdquo; {} （外部変数）</h4>
+
+<p>リスト 3.1.1 の通りRAMなどの情報を他ユーザへ渡したくない場合、別途設定ファイル <code>terraform.confing</code> へ以下の内容を記載します。
+<code>variable</code>は宣言変数です。この設定ファイル<code>terraform.confing</code> をリンクし実行した時、<code>terraform.confing</code> の変数を外部変数として読み取ってくれます。</p>
+
+<pre><code>variable &quot;access_key&quot; {}
+variable &quot;secret_key&quot; {}
+variable &quot;region&quot; {}
+variable &quot;zone&quot; {}
+</code></pre>
+
+<h4 id="3-2-2-2-provider">3.2.2.2 provider</h4>
+
+<p>TerraformはAlibabaCloudだけでなく AWSやGCP、Azureなどにも対応しています。
+各クラウドサービス毎に機能や構成が全く違いますが、それを抑えるのがprovider変数の役割です。
+provider変数は変更することができます。</p>
+
+<pre><code>provider &quot;alicloud&quot; {
+  access_key = &quot;${var.access_key}&quot;
+  secret_key = &quot;${var.secret_key}&quot;
+  region = &quot;${var.region}&quot;
+}
+</code></pre>
+
+<p>Terraformを実行するためのRAMアクセスキーおよびセキュリティキーです。こちらは別途設定ファイル <code>terraform.confing</code> から外部変数としてリンクします。</p>
+
+<pre><code>access_key = &quot;${var.access_key}&quot;
+secret_key = &quot;${var.secret_key}&quot;
+</code></pre>
+
+<p>以下はリージョンを定義します。リージョンごとに使えるサービス・使えないサービス、機能、制限事項や仕様がありますので、必ず指定する必要があります。</p>
+
+<pre><code>region = &quot;${var.region}&quot;
+</code></pre>
+
+<h4 id="3-2-2-3-vpc">3.2.2.3 VPC</h4>
+
+<p>VPCを作成するコードです。</p>
+
+<pre><code>resource &quot;alicloud_vpc&quot; &quot;vpc&quot; {
+  name = &quot;ECS_instance_for_terraform-vpc&quot;
+  cidr_block = &quot;192.168.1.0/24&quot;
+}
+</code></pre>
+
+<p>上記で記載したリソース以外にオプション（任意）でパラメータや構成を指定することもできます。
+* <code>cidr_block</code> - （必須）VPCのCIDRブロック。この例では24bitまでをネットワーク部とする設定をしています。
+* <code>name</code> - （オプション）VPCの名前。デフォルトはnullです。
+* <code>description</code> - （オプション）VPCの説明。デフォルトはnullです。</p>
+
+<p>このリソースを実行することにより、以下のVPC属性情報が出力されます。
+* <code>id</code> - VPCのID。
+* <code>cidr_block</code> - VPCのCIDRブロック。
+* <code>name</code> - VPCの名前。
+* <code>description</code> - VPCの説明。
+* <code>router_id</code> - VPC作成時にデフォルトで作成されたルータのID。
+* <code>route_table_id</code> - VPC作成時にデフォルトで作成されたルータのルートテーブルID。</p>
+
+<p>その他、詳しくは<a href="https://www.terraform.io/docs/providers/alicloud/r/vpc.html">AliCloudのterraform-VPCリファレンス</a>を参照してください。</p>
+
+<h4 id="3-2-2-4-vpc-switch">3.2.2.4 VPC_SWITCH</h4>
+
+<p>VPC_SWITCHを作成するコードです。</p>
+
+<pre><code>resource &quot;alicloud_vswitch&quot; &quot;vsw&quot; {
+  vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
+  cidr_block        = &quot;192.168.1.0/28&quot;
+  availability_zone = &quot;${var.zone}&quot;
+}
+</code></pre>
+
+<p>VPC_SWITCHも上記で記載したリソース以外にオプション（任意）でパラメータや構成を指定することもできます。
+* <code>availability_zone</code> - （必須）スイッチのAZ。
+* <code>vpc_id</code> - （必須）VPC ID。
+* <code>cidr_block</code> - （必須）スイッチのCIDR block。
+* <code>name</code> - （任意）スイッチの名前。デフォルトはnullです。
+* <code>description</code> - （オプション）スイッチの説明。デフォルトはnullです。</p>
+
+<p>このリソースを実行することにより、以下のVPC_SWITCH属性情報が出力されます。
+* <code>id</code> - スイッチのID
+* <code>availability_zone</code> スイッチのAZ
+* <code>cidr_block</code> - スイッチのCIDRブロック
+* <code>vpc_id</code> - VPC ID
+* <code>name</code> - スイッチの名前
+* <code>description</code> - スイッチの説明。</p>
+
+<p>その他、詳しくは<a href="https://www.terraform.io/docs/providers/alicloud/r/vswitch.html">AliCloudのterraform-VPC_SWITCHリファレンス</a>を参照してください。</p>
+
+<h4 id="3-2-2-5-セキュリティグループ">3.2.2.5 セキュリティグループ</h4>
+
+<p>セキュリティグループを作成するコードです。</p>
+
+<pre><code>resource &quot;alicloud_security_group&quot; &quot;sg&quot; {
+  name   = &quot;ECS_instance_for_terraform-sg&quot;
+  vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
+}
+</code></pre>
+
+<p>セキュリティグループも同様、上記で記載したリソース以外にオプション（任意）でパラメータや構成を指定することもできます。
+* <code>name</code> - （オプション）セキュリティグループの名前。デフォルトはnullです。
+* <code>description</code> - （オプション）セキュリティグループの説明。デフォルトはnullです。
+* <code>vpc_id</code> - （オプション）対象のVPC IDを指定します。
+* <code>inner_access</code> - （オプション）同じセキュリティグループ内のすべてのポートで、両方のマシンが互いにアクセスできるようにするかどうかの設定です。
+* <code>tags</code> - （オプション）リソースに割り当てるタグ。</p>
+
+<p>このリソースを実行することにより、以下の属性情報が出力されます。
+* <code>id</code> - セキュリティグループのID
+* <code>vpc_id</code> - VPC ID
+* <code>name</code> - セキュリティグループの名前
+* <code>description</code> - セキュリティグループの説明
+* <code>inner_access</code> - 内部ネットワークアクセスを許可するかどうか。
+* <code>tags</code> - インスタンスタグは、JSON-encode（item）を使って値を表示します。</p>
+
+<p>その他、詳しくは<a href="https://www.terraform.io/docs/providers/alicloud/r/security_group.html">AliCloudのterraform-セキュリティグループ リファレンス</a>を参照してください。</p>
+
+<h4 id="3-2-2-6-セキュリティグループルールリソース">3.2.2.6 セキュリティグループルールリソース</h4>
+
+<p>先ほどはセキュリティグループを宣言しましたが、ルールは別途記載する必要があります。
+セキュリティグループルールリソースを作成・実装するコードです。</p>
+
+<pre><code>resource &quot;alicloud_security_group_rule&quot; &quot;allow_http&quot; {
+  type              = &quot;ingress&quot;
+  ip_protocol       = &quot;tcp&quot;
+  nic_type          = &quot;intranet&quot;
+  policy            = &quot;accept&quot;
+  port_range        = &quot;80/80&quot;
+  priority          = 1
+  security_group_id = &quot;${alicloud_security_group.sg.id}&quot;
+  cidr_ip           = &quot;0.0.0.0/0&quot;
+}
+</code></pre>
+
+<p>セキュリティグループルールも同様、上記で記載したリソース以外にオプション（任意）でパラメータや構成を指定することもできます。</p>
+
+<ul>
+<li><code>type</code> - （必須）作成中のルールの種類。有効なオプションはingress（着信）またはegress（発信）です。</li>
+<li><code>ip_protocol</code> - （必須）プロトコル。することができtcp、udp、icmp、greまたはall。</li>
+<li><code>port_range</code> - （必須）IPプロトコルに関連するポート番号の範囲。デフォルトは &ldquo;-1 / -1&rdquo;です。プロトコルがtcpまたはudpの場合、各サイドポート番号の範囲は1〜65535で、「 - 1 / -1」は無効になります。たとえば1/200、ポート番号の範囲は1〜200です。他のプロトコルport_rangeは &ldquo;-1 / -1&rdquo;のみであり、他の値は無効になります。</li>
+<li><code>security_group_id</code> - （必須）この規則を適用するセキュリティグループ。</li>
+<li><code>nic_type</code> - （オプション）ネットワークタイプのいずれinternetかintranetを指定できます。</li>
+<li><code>internet</code> - （オプション）デフォルト値は<code>internet</code>です。</li>
+<li><code>policy</code>- （オプション）認可ポリシーは、いずれacceptかdropになりますaccept。デフォルト値はです。</li>
+<li><code>priority</code>- （オプション）許可ポリシーの優先順位。パラメータ値：1-100、デフォルト値：1。</li>
+<li><code>cidr_ip</code> - （オプション）ターゲットIPアドレス範囲。デフォルト値は0.0.0.0/0です（これは制限が適用されないことを意味します）。サポートされているその他の形式は10.159.6.18/12です。IPv4のみがサポートされています。</li>
+<li><code>source_security_group_id</code> - （オプション）同じリージョン内のターゲットセキュリティグループID。このフィールドを指定した場合は、nic_type選択できるだけintranetです。</li>
+<li><code>source_group_owner_account</code> - （オプション）セキュリティグループがアカウント間で承認されている場合のターゲットセキュリティグループのAlibaba CloudユーザーアカウントID。このパラメータは、cidr_ipすでに設定されている場合は無効です。</li>
+</ul>
+
+<p>このリソースを実行することにより、以下の属性情報が出力されます。</p>
+
+<ul>
+<li><code>id</code> - セキュリティグループルールのID</li>
+<li><code>type</code> - ルールのタイプ、ingressまたはegress</li>
+<li><code>name</code> - セキュリティグループの名前</li>
+<li><code>port_range</code> - ポート番号の範囲</li>
+<li><code>ip_protocol</code> - セキュリティグループルールのプロトコル</li>
+</ul>
+
+<p>その他、詳しくは<a href="https://www.terraform.io/docs/providers/alicloud/r/security_group_rule.html">AliCloudのterraform-セキュリティグループルール リファレンス</a>を参照してください。</p>
+
+<h4 id="3-2-2-7-ecsインスタンスリソース">3.2.2.7 ECSインスタンスリソース</h4>
+
+<p>先ほどはVPCやセキュリティグループを作成しました。
+今度はECSインスタンスを作成してみます。</p>
+
+<pre><code>resource &quot;alicloud_instance&quot; &quot;ECS_instance&quot; {
+  instance_name   = &quot;ECS_instance_for_terraform&quot;
+  host_name       = &quot;ECS_instance_for_terraform&quot;
+  instance_type   = &quot;ecs.n4.small&quot;
+  image_id        = &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  security_groups = [&quot;${alicloud_security_group.sg.id}&quot;]
+  availability_zone = &quot;${var.zone}&quot;
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+}
+</code></pre>
+
+<p>ECSインスタンス生成リソースは多くのオプション（任意）でパラメータや構成を指定できます。
+ECSインスタンスはVPCやセキュリティグループとは少し異なり、OSやバージョン選定、起動時データ引き渡しやECS使い捨て利用など様々な利用方法が実現出来るため、ここは抑えておきましょう。</p>
+
+<ul>
+<li><code>image_id</code> - （必須）インスタンスに使用するイメージ。ECSインスタンスの画像は &lsquo;image_id&rsquo;を変更することで置き換えることができます。変更されると、インスタンスは再起動して変更を有効にします。</li>
+<li><code>instance_type</code> - （必須）起動するインスタンスの種類。</li>
+<li><code>is_outdated</code> - （オプション）古いインスタンスタイプを使用するかどうか。デフォルトはfalseです。</li>
+<li><code>security_groups</code> - （必須）関連付けるセキュリティグループIDのリスト。</li>
+<li><code>availability_zone</code> - （省略可能）インスタンスを起動するゾーン。無視され、設定時に計算されvswitch_idます。</li>
+<li><code>instance_name</code> - （オプション）ECSの名前。このinstance<em>nameは2から128文字のストリングを持つことができ、 &ldquo; - &ldquo;、 &ldquo;。&rdquo;、 &ldquo;</em>&ldquo;などの英数字またはハイフンのみを含む必要があり、ハイフンで始まったり終わったりしてはなりません。 ：//またはhttps：// 指定されていない場合、Terraformはデフォルトの名前<code>ECS-Instance</code>を自動的に生成します。</li>
+<li><code>system_disk_category</code> - （オプション）有効な値はcloud_efficiency、cloud_ssdおよびcloudです。cloudI / Oに最適化されていないインスタンスにのみ使用されます。デフォルトは<code>cloud_efficiency</code>です。</li>
+<li><code>system_disk_size</code> - （オプション）システムディスクのサイズ（GiB単位）。値の範囲：[20、500]。指定された値は、max {20、Imagesize}以上でなければなりません。デフォルト値：最大{40、ImageSize}。システムディスクの交換時にECSインスタンスのシステムディスクをリセットできます。</li>
+<li><code>description</code> - （オプション）インスタンスの説明。この説明には2〜256文字の文字列を使用できます。http：//またはhttps：//で始めることはできません。デフォルト値はnullです。</li>
+<li><code>internet_charge_type</code> - （オプション）インスタンスのインターネット料金タイプ。有効な値はPayByBandwidth、PayByTrafficです。デフォルトはPayByTrafficです。現在、 &lsquo;PrePaid&rsquo;インスタンスは、値を &ldquo;PayByTraffic&rdquo;から &ldquo;PayByBandwidth&rdquo;に変更することはできません。</li>
+<li><code>internet_max_bandwidth_in</code> - （オプション）パブリックネットワークからの最大着信帯域幅。Mbps（Mega bit per second）で測定されます。値の範囲：[1、200]。この値が指定されていない場合は、自動的に200 Mbpsに設定されます。</li>
+<li><code>internet_max_bandwidth_out</code> - （オプション）パブリックネットワークへの最大発信帯域幅。Mbps（メガビット/秒）で測定されます。値の範囲：[0、100]。デフォルトは0 Mbpsです。</li>
+<li><code>host_name</code> - （任意）ECSのホスト名。2文字以上の文字列です。「hostname」は「。」または「 - 」で始めたり終わらせたりすることはできません。また、2つ以上の連続した「。」または「 - 」記号は使用できません。Windowsでは、ホスト名には最大15文字を含めることができます。これは、大文字/小文字、数字、および「 - 」の組み合わせにすることができます。ホスト名にドット（「。」）を含めることも、数字だけを含めることもできません。Linuxなどの他のOSでは、ホスト名は最大30文字で、ドット（ &ldquo;。&rdquo;）で区切ったセグメントにすることができます。各セグメントには、大文字/小文字、数字、または &ldquo;_&ldquo;を含めることができます。変更されると、インスタンスは再起動して変更を有効にします。</li>
+<li><code>password</code> - （オプション）インスタンスへのパスワードは8〜30文字の文字列です。大文字と小文字、および数字を含める必要がありますが、特殊記号を含めることはできません。変更されると、インスタンスは再起動して変更を有効にします。</li>
+<li><code>vswitch_id</code> - （オプション）VPCで起動する仮想スイッチID。従来のネットワークインスタンスを作成できない場合は、このパラメータを設定する必要があります。</li>
+</ul>
+
+<p>このリソースを実行することにより、以下の属性情報が出力されます。
+出力された属性情報をベースに他のリソースを作ることも可能です。</p>
+
+<ul>
+<li><code>id</code> - インスタンスID</li>
+<li><code>availability_zone</code> - インスタンスを起動するゾーン。</li>
+<li><code>instance_name</code> - インスタンス名</li>
+<li><code>host_name</code> - インスタンスのホスト名。</li>
+<li><code>description</code> - インスタンスの説明</li>
+<li><code>status</code> - インスタンスのステータス。</li>
+<li><code>image_id</code> - インスタンスのイメージID。</li>
+<li><code>instance_type</code> - インスタンスタイプ</li>
+<li><code>private_ip</code> - インスタンスのプライベートIP。</li>
+<li><code>public_ip</code> - インスタンスパブリックIP。</li>
+<li><code>vswitch_id</code> - インスタンスがVPCで作成された場合、この値は仮想スイッチIDです。</li>
+<li><code>tags</code> - インスタンスタグは、jsonencode（item）を使って値を表示します。</li>
+<li><code>key_name</code> - ECSインスタンスにバインドされているキーペアの名前。</li>
+<li><code>role_name</code> - ECSインスタンスにバインドされているRAMロールの名前。</li>
+<li><code>user_data</code> - ユーザーデータのハッシュ値。</li>
+<li><code>period</code> - 期間を使用しているECSインスタンス。</li>
+<li><code>period_unit</code> - 期間単位を使用しているECSインスタンス。</li>
+<li><code>renewal_status</code> - ECSインスタンスは自動的にステータスを更新します。</li>
+<li><code>auto_renew_period</code> - インスタンスの自動更新期間</li>
+<li><code>dry_run</code> - 事前検出するかどうか。</li>
+<li><code>spot_strategy</code> - Pay-As-You-Goインスタンスのスポット戦略</li>
+<li><code>spot_price_limit</code> - インスタンスの1時間あたりの料金しきい値。</li>
+</ul>
+
+<p>その他、詳しくは<a href="https://www.terraform.io/docs/providers/alicloud/r/instance.html">AliCloudのterraform-ECSインスタンス リファレンス</a>を参照してください。</p>
+
+<h4 id="3-2-2-8-他のリソースについて">3.2.2.8 他のリソースについて</h4>
+
+<p>ここまではリソースのソースコードについて説明しました。
+他プロダクトサービスのリソースソースコード作成については<a href="https://www.terraform.io/docs/providers/alicloud/index.html">こちら</a>を参照のうえ、各自作成してみてください。本ガイドラインにもサンプルコードを準備しています。</p>
+
+<h3 id="3-2-3-terraform-init">3.2.3 terraform init</h3>
+
+<p>コードを書いたら「terraform init」コマンドを実行します。このコマンドはTerraformの実行に必要なプロパイダーのバイナリをダウンロードしてくれます。「Terraform has been successfully initialized!」と表示されていれば作業ディレクトリ構成的にOKです。</p>
+
+<pre><code>$ terraform init
+Initializing provider plugins...
+・・・
+Terraform has been successfully initialized!
+</code></pre>
+
+<h3 id="3-2-4-terraform-plan">3.2.4 terraform plan</h3>
+
+<p>次は「terraform plan」コマンドです。
+RAMなどの情報を別途設定ファイル <code>terraform.confing</code> へ記載した場合は以下のコマンドで実行します。</p>
+
+<pre><code>$ terraform plan -var-file=&quot;terraform.confing&quot;
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+
+
+------------------------------------------------------------------------
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  + alicloud_instance.ECS_instance
+      id:                         &lt;computed&gt;
+      availability_zone:          &quot;ap-northeast-1a&quot;
+      deletion_protection:        &quot;false&quot;
+      host_name:                  &quot;ECS_instance_for_terraform&quot;
+      image_id:                   &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot;
+      instance_charge_type:       &quot;PostPaid&quot;
+      instance_name:              &quot;ECS_instance_for_terraform&quot;
+      instance_type:              &quot;ecs.n4.small&quot;
+      internet_max_bandwidth_out: &quot;0&quot;
+      key_name:                   &lt;computed&gt;
+      private_ip:                 &lt;computed&gt;
+      public_ip:                  &lt;computed&gt;
+      role_name:                  &lt;computed&gt;
+      security_groups.#:          &lt;computed&gt;
+      spot_strategy:              &quot;NoSpot&quot;
+      status:                     &lt;computed&gt;
+      subnet_id:                  &lt;computed&gt;
+      system_disk_category:       &quot;cloud_efficiency&quot;
+      system_disk_size:           &quot;40&quot;
+      volume_tags.%:              &lt;computed&gt;
+      vswitch_id:                 &quot;${alicloud_vswitch.vsw.id}&quot;
+
+  + alicloud_security_group.sg
+      id:                         &lt;computed&gt;
+      inner_access:               &quot;true&quot;
+      name:                       &quot;ECS_instance_for_terraform-sg&quot;
+      vpc_id:                     &quot;${alicloud_vpc.vpc.id}&quot;
+
+  + alicloud_security_group_rule.allow_http
+      id:                         &lt;computed&gt;
+      cidr_ip:                    &quot;0.0.0.0/0&quot;
+      ip_protocol:                &quot;tcp&quot;
+      nic_type:                   &quot;intranet&quot;
+      policy:                     &quot;accept&quot;
+      port_range:                 &quot;80/80&quot;
+      priority:                   &quot;1&quot;
+      security_group_id:          &quot;${alicloud_security_group.sg.id}&quot;
+      type:                       &quot;ingress&quot;
+
+  + alicloud_vpc.vpc
+      id:                         &lt;computed&gt;
+      cidr_block:                 &quot;192.168.1.0/24&quot;
+      name:                       &quot;ECS_instance_for_terraform-vpc&quot;
+      route_table_id:             &lt;computed&gt;
+      router_id:                  &lt;computed&gt;
+      router_table_id:            &lt;computed&gt;
+
+  + alicloud_vswitch.vsw
+      id:                         &lt;computed&gt;
+      availability_zone:          &quot;ap-northeast-1a&quot;
+      cidr_block:                 &quot;192.168.1.0/28&quot;
+      vpc_id:                     &quot;${alicloud_vpc.vpc.id}&quot;
+
+
+Plan: 5 to add, 0 to change, 0 to destroy.
+
+------------------------------------------------------------------------
+
+Note: You didn't specify an &quot;-out&quot; parameter to save this plan, so Terraform
+can't guarantee that exactly these actions will be performed if
+&quot;terraform apply&quot; is subsequently run.
+
+</code></pre>
+
+<p>緑色の「+」マーク付きリソースが出力されています。これは「新規にリソースを作成する」という意味です。
+削除や変更など逆の場合は「-」マークが表示されます。これは後述します。</p>
+
+<h3 id="3-2-5-terraform-apply">3.2.5 terraform apply</h3>
+
+<p>今度はリソースを実行、「terraform apply」コマンドを実行します。このコマンドでは、改めてplan結果が表示され、本当に実行していいか確認が行われます。
+こちらもRAMなどの情報を別途設定ファイル<code>terraform.confing</code>へ記載した場合は以下のコマンドで実行します。</p>
+
+<pre><code>$ terraform apply -var-file=&quot;terraform.confing&quot;
+......
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: 
+</code></pre>
+
+<p>途中、「Enter a value:」と表示されますので、『yes』と入力で実行します。</p>
+
+<pre><code>alicloud_instance.ECS_instance: Still creating... (10s elapsed)
+alicloud_instance.ECS_instance: Still creating... (20s elapsed)
+alicloud_instance.ECS_instance: Still creating... (30s elapsed)
+alicloud_instance.ECS_instance: Still creating... (40s elapsed)
+alicloud_instance.ECS_instance: Still creating... (50s elapsed)
+alicloud_instance.ECS_instance: Creation complete after 56s (ID: i-6weea1q1tr8gdvbb4tig)
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+</code></pre>
+
+<p>これでAlibabaCloud ECSコンソールでも、ECSが作成されたことを確認できます(図 3.2.5)。
+<img src="/images/3.2.5.png" alt="図 3.2.5" />
+▲図 3.2.5 AlibabaCloud ECSコンソールでもECS作成を確認</p>
+
+<h3 id="3-2-6-リソースの設定変更">3.2.6 リソースの設定変更</h3>
+
+<p>上記3.2.5のリソースの作成に成功したら、今度は構成を変更してみましょう。</p>
+
+<p>リスト 3.1 をリスト 3.2 のように変更し、タグを追加します。
+▼リスト 3.2 タグを追加</p>
+
+<pre><code>・・・
+・・・
+resource &quot;alicloud_instance&quot; &quot;ECS_instance&quot; {
+  instance_name   = &quot;ECS_instance_for_terraform&quot;
+  host_name       = &quot;ECS_instance_for_terraform&quot;
+  instance_type   = &quot;ecs.n4.small&quot;
+  image_id        = &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  security_groups = [&quot;${alicloud_security_group.sg.id}&quot;]
+  availability_zone = &quot;${var.zone}&quot;
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+
+    tags={
+         Project = &quot;terraform_training&quot;
+         Platform = &quot;CentOS_7_04_64&quot;
+         Enviroment = &quot;dev&quot;
+         OwnerEmailAddress = &quot;xxxx@xxxxx.xxx&quot;
+    }
+}
+</code></pre>
+
+<p>コードを修正したら、再びterraform applyを実行します。</p>
+
+<pre><code>$ terraform apply -var-file=&quot;terraform.confing&quot;
+......
+Plan: 0 to add, 1 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+</code></pre>
+
+<p>途中、「Enter a value:」と表示されますので、『yes』と入力で実行します。</p>
+
+<pre><code>alicloud_instance.ECS_instance: Modifying... (ID: i-6weea1q1tr8gdvbb4tig)
+  tags.%:                 &quot;0&quot; =&gt; &quot;4&quot;
+  tags.Enviroment:        &quot;&quot; =&gt; &quot;dev&quot;
+  tags.OwnerEmailAddress: &quot;&quot; =&gt; &quot;xxxx@xxxxx.xxx&quot;
+  tags.Platform:          &quot;&quot; =&gt; &quot;CentOS_7_04_64&quot;
+  tags.Project:           &quot;&quot; =&gt; &quot;terraform_training&quot;
+alicloud_instance.ECS_instance: Modifications complete after 1s (ID: i-6weea1q1tr8gdvbb4tig)
+
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+</code></pre>
+
+<p>AWS マネジメントコンソールでも、Name タグの追加が確認できます(図 3.2.6)。
+<img src="/images/3.2.6.png" alt="図 3.2.6" />
+▲図 3.2.6 ECSタグの付与を確認</p>
+
+<h3 id="3-2-7-リソースの再作成">3.2.7 リソースの再作成</h3>
+
+<p>次にリスト 3.3 のように、Apacheをインストールするよう変更し、apply します。
+▼リスト 3.3 User Data で Apache をインストール</p>
+
+<pre><code>resource &quot;alicloud_instance&quot; &quot;ECS_instance&quot; {
+  instance_name   = &quot;ECS_instance_for_terraform&quot;
+  host_name       = &quot;ECS_instance_for_terraform&quot;
+  instance_type   = &quot;ecs.n4.small&quot;
+  image_id        = &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  security_groups = [&quot;${alicloud_security_group.sg.id}&quot;]
+  availability_zone = &quot;${var.zone}&quot;
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+
+    tags={
+         Project = &quot;terraform_training&quot;
+         Platform = &quot;CentOS_7_04_64&quot;
+         Enviroment = &quot;dev&quot;
+         OwnerEmailAddress = &quot;xxxx@xxxxx.xxx&quot;
+    }
+
+  user_data = &lt;&lt;EOF
+    #!/bin/bash
+    yum install -y httpd
+    systemctl start httpd.service
+EOF
+}
+</code></pre>
+
+<p>修正したら再びterraform applyを実行します。</p>
+
+<pre><code>$ terraform apply -var-file=&quot;terraform.confing&quot;
+alicloud_vpc.vpc: Refreshing state... (ID: vpc-6wen1y9pbew0gycatrga1)
+alicloud_security_group.sg: Refreshing state... (ID: sg-6we3mqu997mou7ur7gci)
+alicloud_vswitch.vsw: Refreshing state... (ID: vsw-6wepztrdw7fn04b8h9y2r)
+alicloud_security_group_rule.allow_http: Refreshing state... (ID: sg-6we3mqu997mou7ur7gci:ingress:tcp:80/80:intranet:0.0.0.0/0:accept:1)
+alicloud_instance.ECS_instance: Refreshing state... (ID: i-6weea1q1tr8gdvbb4tig)
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+-/+ destroy and then create replacement
+
+Terraform will perform the following actions:
+
+-/+ alicloud_instance.ECS_instance (new resource required)
+      id:                         &quot;i-6weea1q1tr8gdvbb4tig&quot; =&gt; &lt;computed&gt; (forces new resource)
+      availability_zone:          &quot;ap-northeast-1a&quot; =&gt; &quot;ap-northeast-1a&quot;
+      deletion_protection:        &quot;false&quot; =&gt; &quot;false&quot;
+      host_name:                  &quot;iZ6weea1q1tr8gdvbb4tigZ&quot; =&gt; &lt;computed&gt;
+      image_id:                   &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot; =&gt; &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot;
+      instance_charge_type:       &quot;PostPaid&quot; =&gt; &quot;PostPaid&quot;
+      instance_name:              &quot;ECS_instance_for_terraform&quot; =&gt; &quot;ECS_instance_for_terraform&quot;
+      instance_type:              &quot;ecs.n4.small&quot; =&gt; &quot;ecs.n4.small&quot;
+      internet_max_bandwidth_out: &quot;0&quot; =&gt; &quot;0&quot;
+      key_name:                   &quot;&quot; =&gt; &lt;computed&gt;
+      private_ip:                 &quot;192.168.1.3&quot; =&gt; &lt;computed&gt;
+      public_ip:                  &quot;&quot; =&gt; &lt;computed&gt;
+      role_name:                  &quot;&quot; =&gt; &lt;computed&gt;
+      security_groups.#:          &quot;1&quot; =&gt; &quot;1&quot;
+      security_groups.3550734980: &quot;sg-6we3mqu997mou7ur7gci&quot; =&gt; &quot;sg-6we3mqu997mou7ur7gci&quot;
+      spot_strategy:              &quot;NoSpot&quot; =&gt; &quot;NoSpot&quot;
+      status:                     &quot;Running&quot; =&gt; &lt;computed&gt;
+      subnet_id:                  &quot;vsw-6wepztrdw7fn04b8h9y2r&quot; =&gt; &lt;computed&gt;
+      system_disk_category:       &quot;cloud_efficiency&quot; =&gt; &quot;cloud_efficiency&quot;
+      system_disk_size:           &quot;40&quot; =&gt; &quot;40&quot;
+      tags.%:                     &quot;4&quot; =&gt; &quot;4&quot;
+      tags.Enviroment:            &quot;dev&quot; =&gt; &quot;dev&quot;
+      tags.OwnerEmailAddress:     &quot;xxxx@xxxxx.xxx&quot; =&gt; &quot;xxxx@xxxxx.xxx&quot;
+      tags.Platform:              &quot;CentOS_7_04_64&quot; =&gt; &quot;CentOS_7_04_64&quot;
+      tags.Project:               &quot;terraform_training&quot; =&gt; &quot;terraform_training&quot;
+      user_data:                  &quot;&quot; =&gt; &quot;    #!/bin/bash\n    yum install -y httpd\n    systemctl start httpd.service\n&quot; (forces new resource)
+      volume_tags.%:              &quot;0&quot; =&gt; &lt;computed&gt;
+      vswitch_id:                 &quot;vsw-6wepztrdw7fn04b8h9y2r&quot; =&gt; &quot;vsw-6wepztrdw7fn04b8h9y2r&quot;
+
+
+Plan: 1 to add, 0 to change, 1 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value:
+</code></pre>
+
+<p>今度は『-/+』マークがつき「destroy and then create replacement」というメッセージが出ています。
+これは「既存のリソースを削除して新しいリソースを作成する」という意味です。
+一部分リソース削除があるため、システム運用に影響が出てしまう場合もありますので要注意です。</p>
+
+<pre><code>alicloud_instance.ECS_instance: Still creating... (10s elapsed)
+alicloud_instance.ECS_instance: Still creating... (20s elapsed)
+alicloud_instance.ECS_instance: Still creating... (30s elapsed)
+alicloud_instance.ECS_instance: Still creating... (40s elapsed)
+alicloud_instance.ECS_instance: Still creating... (50s elapsed)
+alicloud_instance.ECS_instance: Creation complete after 56s (ID: i-6weegevun3jit7gpyut8)
+
+Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
+</code></pre>
+
+<p>再びコンソールで確認すると、最初起動したインスタンスが破棄（リリース）され、新しいインスタンスが立ち上がっています(図 3.2.7)。
+<img src="/images/3.2.7.png" alt="図 3.2.7" />
+▲図 3.2.7 ECSインスタンス名が変わっており、それまで起動したECSがリリース（破棄）されたのがわかります。</p>
+
+<p>このように、Terraform によるリソースの更新は、「既存リソースをそのまま変更する」 ケースと「リソースが作り直しになる」ケースがあります。本番運用では、意図した挙動 になるか、plan結果をきちんと確認することが大切です。</p>
+
+<h2 id="3-3-terraform-の構成要素">3.3 Terraform の構成要素</h2>
+
+<p>ここからは、Terraformのコード構成要素になります。Terraformの利用ガイドラインに沿って記載してみてください。
+Terraformのバージョンによっては書き方が異なる場合がありますので、注意が必要です。</p>
+
+<h3 id="3-3-1-configuration-syntax">3.3.1 Configuration Syntax</h3>
+
+<p>コードの構成文の書き方です。</p>
+
+<pre><code># An AMI
+variable &quot;ami&quot; {
+  description = &quot;the AMI to use&quot;
+}
+
+/* A multi
+   line comment. */
+resource &quot;aws_instance&quot; &quot;web&quot; {
+  ami               = &quot;${var.ami}&quot;
+  count             = 2
+  source_dest_check = false
+
+  connection {
+    user = &quot;root&quot;
+  }
+}
+</code></pre>
+
+<ul>
+<li>単一行コメントは<code>#</code>をつけます。</li>
+<li>複数行コメントは<code>/*</code>と<code>*/</code>で囲みます。</li>
+<li>文字列は二重引用符で囲みます。</li>
+<li>文字列は<code>${}</code>を使って他の構文や値を補間できます。 <code>${var.foo}</code>。</li>
+<li>数字は10進数で扱います。数字の前に英数字を付けると、例えば0xでも16進数として扱われます。</li>
+<li>ブール値が使え、true、falseのどれかになります。</li>
+<li>プリミティブ型のリストは角括弧（[]）で作成できます。例：<code>[&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;]</code></li>
+<li>マップは中括弧（{}）とコロン（:） で作成できます。例：<code>{ &quot;foo&quot;: &quot;bar&quot;, &quot;bar&quot;: &quot;baz&quot; }</code>  キーが数字で始まっていない限り、キーでは引用符を省略できます。その場合は、引用符が必要です。単一行マップでは、キーと値のペアの間にコンマが必要です。複数行マップではキーと値のペアの間の改行で十分です。</li>
+</ul>
+
+<p><a href="https://www.terraform.io/docs/configuration-0-11/syntax.html">他にも構成文の書き方</a>もありますが、ひとまずは上記のを抑えれば大抵問題ないです。</p>
+
+<h3 id="3-3-2-interpolation-syntax">3.3.2 Interpolation Syntax</h3>
+
+<p>変数・関数・属性など、コード補充機能です。</p>
+
+<ul>
+<li><p>ユーザ文字列変数
+var.接頭辞とそれに続く変数名を使用します。たとえば<code>${var.foo}</code> で foo変数値を補間します。</p></li>
+
+<li><p>ユーザーマップ変数
+構文は<code>var.MAP[&quot;KEY&quot;]</code>です。たとえば<code>${var.amis[&quot;us-east-1&quot;]}</code> でマップ変数<code>us-east-1</code>、内キーの値<code>amis</code>を取得します。</p></li>
+
+<li><p>ユーザリスト変数
+構文は<code>${var.LIST}</code>です。たとえば<code>${var.subnets}</code> で<code>subnetsリストの値</code>をリストとして取得します。リスト要素をindexで返すこともできます。例：<code>${var.subnets[idx]}</code>。</p></li>
+
+<li><p>リソース自身の属性
+構文はself.ATTRIBUTEです。たとえば<code>${self.private_ip}</code> でそのリソースの<code>private_ip</code>を取得します。</p></li>
+
+<li><p>他のリソースの属性
+構文は<code>TYPE.NAME.ATTRIBUTE</code>です。たとえば<code>${aws_instance.web.id}</code>という名前の<code>aws_instance</code>リソースからweb属性のIDを取得できます。リソースにcount属性セットがある場合は、0から始まるインデックスを使用して個々の属性にアクセスできます。例：<code>${aws_instance.web.0.id}</code>。 splat構文を使ってすべての属性のリストを取得することもできます。例：<code>${aws_instance.web.*.id}</code>。</p></li>
+
+<li><p>データソースの属性
+構文は<code>data.TYPE.NAME.ATTRIBUTE</code>です。たとえば<code>${data.aws_ami.ubuntu.id}</code>なら<code>aws_ami</code>というデータソースから<code>ubuntu</code>属性の<code>id</code>を取得します。データソースに属性セットがある場合は、のようにゼロから始まるインデックスを使用して個々の属性にアクセスできます。例：<code>${data.aws_subnet.example.0.cidr_block}</code>。 splat構文を使ってすべての属性のリストを取得することもできます。例：<code>${data.aws_subnet.example.*.cidr_block}</code></p></li>
+
+<li><p>モジュールからの出力
+構文は<code>MODULE.NAME.OUTPUT</code>です。たとえば<code>${module.foo.bar}</code>の場合、<code>foo</code>というモジュールの<code>bar</code>を取得します。</p></li>
+
+<li><p>カウント情報
+構文は<code>count.FIELD</code>です。たとえば<code>${count.index}</code>の場合、<code>count</code>毎のインデックスらリソースを取得します。</p></li>
+</ul>
+
+<p><a href="https://www.terraform.io/docs/configuration-0-11/interpolation.html">その他、補充機能はこちらを参照</a>してみてください。</p>
+
+<h3 id="3-3-3-外部変数">3.3.3 外部変数</h3>
+
+<p>上記にも記述しましたが、RAMなどの情報を他ユーザへ渡したくない場合、別途設定ファイル <code>terraform.confing</code> へ記載します。
+例えば以下の別途設定ファイル <code>terraform.confing</code>、および実行ファイル <code>main.tf</code> があるとします。</p>
+
+<p>▼リスト 3.3.3.1 別途設定ファイル <code>terraform.confing</code> の中身</p>
+
+<pre><code>access_key = &quot;xxxxxxxxxxxxxxxxxx&quot;
+secret_key = &quot;xxxxxxxxxxxxxxxxxx&quot;
+region = &quot;ap-northeast-1&quot;
+zone = &quot;ap-northeast-1a&quot;
+</code></pre>
+
+<p>▼リスト 3.3.3.2 実行ファイル <code>main.tf</code> の中身</p>
+
+<pre><code>variable &quot;access_key&quot; {}
+variable &quot;secret_key&quot; {}
+variable &quot;region&quot; {}
+variable &quot;zone&quot; {}
+
+provider &quot;alicloud&quot; {
+  access_key = &quot;${var.access_key}&quot;
+  secret_key = &quot;${var.secret_key}&quot;
+  region = &quot;${var.region}&quot;
+}
+</code></pre>
+
+<p>これをコマンド実行時に「 -var-file=&rdquo;&lt;ファイル名&gt;&ldquo;」引数オプションで設定ファイルを外部変数・リンクし実行します。</p>
+
+<pre><code>$ terraform plan -var-file=&quot;terraform.confing&quot;
+</code></pre>
+
+<p>すると、RAMなどの情報を別ファイルに残したまま、リソース作成されます。</p>
+
+<h3 id="3-3-4-ローカル値">3.3.4 ローカル値</h3>
+
+<p><code>locals</code>を使うとローカル変数が定義できます。リスト3.3.6 のように<code>locals</code>で囲んだ変数を宣言することで、ローカル変数を使うことができます。</p>
+
+<p>▼リスト 3.3.4 ローカル変数の定義</p>
+
+<pre><code>locals {
+   select_instance_type = &quot;ecs.n4.small&quot;
+}
+
+resource &quot;alicloud_instance&quot; &quot;ECS_instance&quot; {
+  instance_name   = &quot;ECS_instance_for_terraform&quot;
+  host_name       = &quot;ECS_instance_for_terraform&quot;
+  instance_type   = var.select_instance_type
+  image_id        = &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  security_groups = [&quot;${alicloud_security_group.sg.id}&quot;]
+  availability_zone = &quot;${var.zone}&quot;
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+}
+</code></pre>
+
+<h3 id="3-3-5-アウトプット">3.3.5 アウトプット</h3>
+
+<p><code>output</code>を使うとアウトプットが定義できます。リスト 3.3.5 のように定義すると、apply実行時にターミナルで値を確認したり、リソース・モジュールから値を取得できます。</p>
+
+<p>▼リスト 3.3.5 出力値の定義</p>
+
+<pre><code>resource &quot;alicloud_instance&quot; &quot;ECS_instance&quot; {
+  instance_name   = &quot;ECS_instance_for_terraform&quot;
+  host_name       = &quot;ECS_instance_for_terraform&quot;
+  instance_type   = &quot;ecs.n4.small&quot;
+  image_id        = &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  security_groups = [&quot;${alicloud_security_group.sg.id}&quot;]
+  availability_zone = &quot;${var.zone}&quot;
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+}
+
+output &quot;ECS_instance_id&quot; {
+  value = alicloud_instance.ECS_instance.instance_type
+}
+</code></pre>
+
+<p>applyすると、実行結果の最後に、作成されたインスタンスの type が出力されます。</p>
+
+<pre><code>$ terraform apply
+.....
+Outputs:
+ecs.n4.small
+</code></pre>
+
+<h3 id="3-3-6-条件分岐">3.3.6 条件分岐</h3>
+
+<p>Terraformは条件分岐が使えます。
+先に<code>variable</code>変数を記載したあと、resource構文にて<code>variable</code>変数を選定します。
+例えば環境に応じてインスタンスタイプを切り替えたい場合は、リスト3.3.6のように書きます。</p>
+
+<p>▼リスト 3.3.6 条件分岐の記載方法</p>
+
+<pre><code>variable &quot;instance_pattern&quot; {}
+
+resource &quot;alicloud_instance&quot; &quot;ECS_instance&quot; {
+  instance_name   = &quot;ECS_instance_for_terraform&quot;
+  host_name       = &quot;ECS_instance_for_terraform&quot;
+  instance_type   = var.instance_pattern == &quot;dev&quot; ? &quot;ecs.n4.small&quot; : &quot;ecs.n4.2xlarge&quot;
+  image_id        = &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  security_groups = [&quot;${alicloud_security_group.sg.id}&quot;]
+  availability_zone = &quot;${var.zone}&quot;
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+}
+</code></pre>
+
+<p>そのあと、リスト3.3.6を実行するときは引数でenv変数を指定することで、条件分岐してくれます。</p>
+
+<pre><code>$ terraform plan -var-file=&quot;terraform.confing&quot; -var 'instance_pattern=dev'
+$ terraform apply -var-file=&quot;terraform.confing&quot; -var 'instance_pattern=production'
+</code></pre>
+
+<h3 id="3-3-7-組み込み関数">3.3.7 組み込み関数</h3>
+
+<p>Terraformからリソースを作成するときに、例えばApacheによるWebサーバを立ち上げたい場合、ECS起動後、Apacheのインストール、Webサーバ立ち上げ（httpd.service start）をする必要があります。
+これらの処理を組み込み関数として、<code>user_data</code>にて外部ファイル（shell）を読み取りユーザデータとして設定することができます。</p>
+
+<p>▼リスト 3.3.7.1 Webサーバのインストールスクリプト<code>install.sh</code></p>
+
+<pre><code>#!/bin/bash -ex
+wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+rpm -ivh mysql-community-release-el7-5.noarch.rpm
+yum -y install mysql-server httpd php php-mysql unzip
+systemctl enable httpd
+systemctl enable mysqld
+systemctl start httpd
+systemctl start mysqld
+USER=&quot;root&quot;
+DATABASE=&quot;wordpress&quot;
+mysql -u $USER &lt;&lt; EOF 
+CREATE DATABASE $DATABASE; 
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost' IDENTIFIED BY 'qweqwe123!';
+EOF
+if [ ! -f /var/www/html/latest.tar.gz ]; then
+cd /var/www/html
+wget -c http://wordpress.org/latest.tar.gz
+tar -xzvf latest.tar.gz
+mv wordpress/* /var/www/html/
+chown -R apache.apache /var/www/html/
+chmod -R 755 /var/www/html/
+fi
+</code></pre>
+
+<p>これをuser_dataに入れて実行すると、install.shファイルを読み込み、Apacheをインストール、Webサーバを立ち上げてくれます。</p>
+
+<p>▼リスト 3.3.7.2 Webサーバのインストールスクリプトを読み込み、Webサーバを立ち上げてくれます</p>
+
+<pre><code>resource &quot;alicloud_instance&quot; &quot;ECS_instance&quot; {
+  instance_name   = &quot;ECS_instance_for_terraform&quot;
+  host_name       = &quot;ECS_instance_for_terraform&quot;
+  instance_type   = var.instance_pattern == &quot;dev&quot; ? &quot;ecs.n4.small&quot; : &quot;ecs.n4.2xlarge&quot;
+  image_id        = &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  security_groups = [&quot;${alicloud_security_group.sg.id}&quot;]
+  availability_zone = &quot;${var.zone}&quot;
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+  user_data     = file(&quot;./install.sh&quot;)
+}
+</code></pre>
+
+<h3 id="3-3-8-モジュール">3.3.8 モジュール</h3>
+
+<p>terraformにはモジュールがあります。
+モジュールは名前通り、リソースをまとめてテンプレート化し、呼び出すときに必要な引数だけ与えてあげれば実行できるものです。
+1つのPJ配下で同じ変数を繰り返し宣言をする部分や、サービス毎にコードら記載することが多くなった時は、モジュールを使うことで、より効率的にコード作成、実行することができます。</p>
+
+<p>上記の例：リスト3.3.8.1のようなWebサーバ立ち上げソースをベースに、モジュールを作ってみます。</p>
+
+<p>▼リスト 3.3.8.1 ベーシックなWebサーバ</p>
+
+<pre><code>variable &quot;access_key&quot; {}
+variable &quot;secret_key&quot; {}
+variable &quot;region&quot; {}
+variable &quot;zone&quot; {}
+
+provider &quot;alicloud&quot; {
+  access_key = &quot;${var.access_key}&quot;
+  secret_key = &quot;${var.secret_key}&quot;
+  region = &quot;${var.region}&quot;
+}
+
+resource &quot;alicloud_security_group&quot; &quot;sg&quot; {
+  name   = &quot;terraform-sg&quot;
+  vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
+}
+
+resource &quot;alicloud_security_group_rule&quot; &quot;allow_http&quot; {
+  type              = &quot;ingress&quot;
+  ip_protocol       = &quot;tcp&quot;
+  nic_type          = &quot;intranet&quot;
+  policy            = &quot;accept&quot;
+  port_range        = &quot;80/80&quot;
+  priority          = 1
+  security_group_id = &quot;${alicloud_security_group.sg.id}&quot;
+  cidr_ip           = &quot;0.0.0.0/0&quot;
+}
+
+resource &quot;alicloud_vpc&quot; &quot;vpc&quot; {
+  name = &quot;terraform-vpc&quot;
+  cidr_block = &quot;192.168.1.0/24&quot;
+}
+
+resource &quot;alicloud_vswitch&quot; &quot;vsw&quot; {
+  vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
+  cidr_block        = &quot;192.168.1.0/28&quot;
+  availability_zone = &quot;${var.zone}&quot;
+}
+
+resource &quot;alicloud_eip&quot; &quot;eip&quot; {
+  internet_charge_type = &quot;PayByTraffic&quot;
+}
+
+resource &quot;alicloud_eip_association&quot; &quot;eip_asso&quot; {
+  allocation_id = &quot;${alicloud_eip.eip.id}&quot;
+  instance_id   = &quot;${alicloud_instance.web.id}&quot;
+}
+
+resource &quot;alicloud_instance&quot; &quot;web&quot; {
+  instance_name = &quot;terraform-ecs&quot;
+  availability_zone = &quot;${var.zone}&quot;
+  image_id = &quot;centos_7_3_64_40G_base_20170322.vhd&quot;
+  instance_type = &quot;ecs.n4.small&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  security_groups = [&quot;${alicloud_security_group.sg.id}&quot;]
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+  user_data = &quot;${file(&quot;provisioning.sh&quot;)}&quot;
+}
+
+</code></pre>
+
+<p>この例から、例えばinstance_typeを他のリソースコードでも繰り返し使いたい場合、これをモジュールとして作成します。</p>
+
+<p>モジュールを作成するときは階層化された別ディレクトリにする必要があります。（フォルダで親と子の関係が必須）
+リスト3.3.8.2のようなディレクトリ構成にします。拡張子は<code>.tf</code>です。</p>
+
+<p>▼リスト 3.3.8.2 モジュールを作成するときのディレクトリ構成</p>
+
+<pre><code>├── basic_webserver
+│ └── module.tf ・・・ モジュールを記載するファイル
+└── main.tf ・・・ モジュールを利用するファイル
+</code></pre>
+
+<p>それでは上記配置した<code>main.tf</code>および<code>module.tf</code>にてソースを記載します。</p>
+
+<p>▼リスト <code>main.tf</code>の中身</p>
+
+<pre><code>variable &quot;instance_type&quot; {}
+variable &quot;access_key&quot; {}
+variable &quot;secret_key&quot; {}
+variable &quot;region&quot; {}
+variable &quot;zone&quot; {}
+
+provider &quot;alicloud&quot; {
+  access_key = &quot;${var.access_key}&quot;
+  secret_key = &quot;${var.secret_key}&quot;
+  region = &quot;${var.region}&quot;
+}
+
+resource &quot;alicloud_security_group&quot; &quot;sg&quot; {
+  name   = &quot;terraform-sg&quot;
+  vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
+}
+
+resource &quot;alicloud_security_group_rule&quot; &quot;allow_http&quot; {
+  type              = &quot;ingress&quot;
+  ip_protocol       = &quot;tcp&quot;
+  nic_type          = &quot;intranet&quot;
+  policy            = &quot;accept&quot;
+  port_range        = &quot;80/80&quot;
+  priority          = 1
+  security_group_id = &quot;${alicloud_security_group.sg.id}&quot;
+  cidr_ip           = &quot;0.0.0.0/0&quot;
+}
+
+resource &quot;alicloud_vpc&quot; &quot;vpc&quot; {
+  name = &quot;terraform-vpc&quot;
+  cidr_block = &quot;192.168.1.0/24&quot;
+}
+
+resource &quot;alicloud_vswitch&quot; &quot;vsw&quot; {
+  vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
+  cidr_block        = &quot;192.168.1.0/28&quot;
+  availability_zone = &quot;${var.zone}&quot;
+}
+
+resource &quot;alicloud_eip&quot; &quot;eip&quot; {
+  internet_charge_type = &quot;PayByTraffic&quot;
+}
+
+resource &quot;alicloud_eip_association&quot; &quot;eip_asso&quot; {
+  allocation_id = &quot;${alicloud_eip.eip.id}&quot;
+  instance_id   = &quot;${alicloud_instance.web.id}&quot;
+}
+
+resource &quot;alicloud_instance&quot; &quot;web&quot; {
+  instance_name = &quot;terraform-ecs&quot;
+  availability_zone = &quot;${var.zone}&quot;
+  image_id = &quot;centos_7_3_64_40G_base_20170322.vhd&quot;
+  instance_type = var.instance_type
+  system_disk_category = &quot;cloud_efficiency&quot;
+  security_groups = [&quot;${alicloud_security_group.sg.id}&quot;]
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+  user_data = &quot;${file(&quot;provisioning.sh&quot;)}&quot;
+}
+</code></pre>
+
+<p>▼リスト <code>module.tf</code>の中身</p>
+
+<pre><code>module &quot;webserver&quot; {
+  source        = &quot;./basic_webserver&quot; 
+  instance_type = &quot;ecs.n4.small&quot;
+}
+</code></pre>
+
+<p>準備ができたら、<code>terraform get</code> か<code>terraform init</code>コマンドでモジュールを認識させます。それからterraform plan、applyを実行します。</p>
+
+<pre><code>$ terraform get
+$ terraform plan -var-file=&quot;terraform.confing&quot; -var 'instance_pattern=dev'
+$ terraform apply -var-file=&quot;terraform.confing&quot; -var 'instance_pattern=production'
+</code></pre>
+
+<p>これでリソースが実行されます。</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/create-virtual-servers/" title="第1章 ECSインスタンスの作成"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/" title="比較資料" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/tech-docs/js/clipboard.min.js?1559536555"></script>
+    <script src="/tech-docs/js/perfect-scrollbar.min.js?1559536555"></script>
+    <script src="/tech-docs/js/perfect-scrollbar.jquery.min.js?1559536555"></script>
+    <script src="/tech-docs/js/jquery.sticky.js?1559536555"></script>
+    <script src="/tech-docs/js/featherlight.min.js?1559536555"></script>
+    <script src="/tech-docs/js/html5shiv-printshiv.min.js?1559536555"></script>
+    <script src="/tech-docs/js/highlight.pack.js?1559536555"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/tech-docs/js/modernizr.custom-3.6.0.js?1559536555"></script>
+    <script src="/tech-docs/js/learn.js?1559536555"></script>
+    <script src="/tech-docs/js/hugo-learn.js?1559536555"></script>
+
+    <link href="/tech-docs/mermaid/mermaid.css?1559536555" type="text/css" rel="stylesheet" />
+    <script src="/tech-docs/mermaid/mermaid.js?1559536555"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
