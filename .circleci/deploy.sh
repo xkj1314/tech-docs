@@ -20,4 +20,4 @@ rsync -arv --delete ./docs/* .
 
 git add -f .
 git commit -m "Deploy #$CIRCLE_BUILD_NUM from CircleCI [ci skip]" || true
-git push -f
+git push origin gh-pages
