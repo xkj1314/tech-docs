@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/tech-docs/images/favicon.png" type="image/png">
+
+    <title>第5章 権限管理 :: SBCloud Documentation</title>
+
+    
+    <link href="/tech-docs/css/nucleus.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/fontawesome-all.min.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/hybrid.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/featherlight.min.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/perfect-scrollbar.min.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/auto-complete.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/atom-one-dark-reasonable.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/theme.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/hugo-theme.css?1559550758" rel="stylesheet">
+    
+      <link href="/tech-docs/css/theme-blue.css?1559550758" rel="stylesheet">
+    
+
+    <script src="/tech-docs/js/jquery-3.3.1.min.js?1559550758"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <style type="text/css">
+     
+ 
+.topnav {
+  position: relative;
+  background-color: #333;
+  overflow: hidden;
+}
+
+ 
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  z-index: 3;
+}
+
+ 
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+ 
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+  </head>
+  <body class="" data-url="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/authority_management/">
+    <img src="http://localhost/SBC_HEADER.png" alt="ヘッダー">
+
+    <nav id="sidebar" class="">
+
+
+
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/" title="ガイドライン" class="dd-item 
+        parent
+        
+        ">
+      <a href="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/">
+          ガイドライン
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/authority_management/" title="第5章 権限管理" class="dd-item active">
+        <a href="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/authority_management/">
+        第5章 権限管理
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/" title="利用手順" class="dd-item 
+        
+        
+        ">
+      <a href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/">
+          利用手順
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/create-virtual-servers/" title="第1章 ECSインスタンスの作成" class="dd-item ">
+        <a href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/create-virtual-servers/">
+        第1章 ECSインスタンスの作成
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/how_to_use_terraform/" title="第3章 Terraform の基本" class="dd-item ">
+        <a href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/how_to_use_terraform/">
+        第3章 Terraform の基本
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/" title="比較資料" class="dd-item 
+        
+        
+        ">
+      <a href="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/">
+          比較資料
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/simple_compare/" title="云计算基础(クラウドコンピューティングの基盤)" class="dd-item ">
+        <a href="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/simple_compare/">
+        云计算基础(クラウドコンピューティングの基盤)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/tech-docs/'>SBCloud Documentation</a> > <a href='/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/'>ガイドライン</a> > 第5章 権限管理
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#5-1-alibaba-cloudのramについて">5.1 Alibaba CloudのRAMについて</a></li>
+<li><a href="#5-2-ramロールとramユーザーの違い">5.2 RAMロールとRAMユーザーの違い</a></li>
+<li><a href="#5-3-ホ-リシー">5.3 ポリシー</a>
+<ul>
+<li><a href="#5-3-1-ホ-リシート-キュメント">5.3.1 ポリシードキュメント</a></li>
+<li><a href="#5-3-2-ram-ホ-リシー">5.3.2 RAM ポリシー</a></li>
+</ul></li>
+<li><a href="#5-4-ram-ポリシーの作成">5.4 RAM ポリシーの作成</a></li>
+<li><a href="#5-5-ramロールを作成し-ramポリシーへアタッチ">5.5 RAMロールを作成し、RAMポリシーへアタッチ</a></li>
+<li><a href="#5-6-ramポリシーを対象リソース-サービスへアタッチ">5.6 RAMポリシーを対象リソース・サービスへアタッチ</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              第5章 権限管理
+            </h1>
+          
+
+        
+
+
+
+
+
+<p>AAlibabaCloudはどのサービスを利用・操作するにしろ権限が必要です。
+Terraformで作成したリソースサービスにも他ユーザが操作できるように権限アタッチが必要になります。
+本章では、AlibabaCloudサービスに対する権限付与の方法を学びます。</p>
+
+<h2 id="5-1-alibaba-cloudのramについて">5.1 Alibaba CloudのRAMについて</h2>
+
+<p>RAM（Resource Access Management）はユーザーID の管理とアクセス制御、権限管理のためのサービスです。
+RAMを使用することで、ユーザーアカウント (従業員、システム、アプリケーションなど) を作成および管理し、Alibaba Cloud アカウントのリソースに対してそのユーザーアカウントが所有する操作権限を制御できます。Terraformによるリソースを実行するときはRAMで実行権限が必須です。</p>
+
+<h2 id="5-2-ramロールとramユーザーの違い">5.2 RAMロールとRAMユーザーの違い</h2>
+
+<p>・RAMロールは仮想ID であり、固定のIDは持っていますが、ID認証情報アクセスキーを持ちません。
+・RAMユーザは、固定のIDとID認証アクセスキーを持つ実際のIDであり、一般的には、特定のユーザーまたはアプリケーションに対応します。</p>
+
+<pre><code class="language-mermaid">  graph LR;
+  A(&quot;ポリシーサービスに&lt;br&gt;対する権限&quot;)-.-&gt;B(&quot;RAMポリシーを&lt;br&gt;ロールにアタッチ&quot;)
+  A(&quot;ポリシーサービスに&lt;br&gt;対する権限&quot;)-.-&gt;C(&quot;RAMポリシーを&lt;br&gt;ユーザにアタッチ&quot;)        
+  B(&quot;RAMポリシーを&lt;br&gt;ロールにアタッチ&quot;)-.-&gt;D(&quot;ロール(役割)&quot;)
+  C(&quot;RAMポリシーを&lt;br&gt;ユーザにアタッチ&quot;)-.-&gt;E(&quot;ユーザ(人)&quot;)
+  D(&quot;ロール(役割)&quot;)-.-&gt;F(&quot;ロール(役割)を&lt;br&gt;エンティティ(ECSインスタンスなど）にアタッチ&quot;)
+  A(&quot;ポリシーサービスに&lt;br&gt;対する権限&quot;)-.-&gt;G(&quot;RAMポリシーを&lt;br&gt;グループにアタッチ&quot;)
+  G(&quot;RAMポリシーを&lt;br&gt;グループにアタッチ&quot;)-.-&gt;H(&quot;グループ（ユーザの集まり）&quot;)
+</code></pre>
+
+<p>RAMロールは権限が付与された実際のユーザーが引き受ける必要があります。ロールを引き受けると実際のユーザーはこのRAMロールの一時セキュリティトークンを受け取ります。これにより、この一時セキュリティトークンを使用して、ロールに許可されているリソースにアクセスできます。</p>
+
+<p>普段の利用時はRAMユーザで管理・運用していくのがベストプラクティスですが、Terraform利用時は基本的にAdministratorAccessが必要となります。</p>
+
+<h2 id="5-3-ホ-リシー">5.3 ポリシー</h2>
+
+<p>権限はポリシーで定義します。ポリシーでは「実行可能なアクション」や「操作可能なリソース」を指定でき、柔軟に権限が設定できます。</p>
+
+<h3 id="5-3-1-ホ-リシート-キュメント">5.3.1 ポリシードキュメント</h3>
+
+<p>ポリシードキュメントはJSON形式で管理しており、リスト5.3.1.1のようにまとめます。
+▼リスト 5.3.1.1 JSON 形式のポリシードキュメント</p>
+
+<pre><code>{
+  &quot;Statement&quot;: [
+    {
+      &quot;Action&quot;: &quot;*&quot;,
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Resource&quot;: &quot;*&quot;
+    }
+  ],
+  &quot;Version&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>ポリシードキュメントでは、次のような要素を記述します。
+* <code>Effect</code> - 許可する場合はAllow、許可しない場合はDeny
+* <code>Resource</code> - AlibabaCloudの操作可能なリソース・許可されたオブジェクトはなにかを指定します。たとえば ”ユーザAがリソースSampleBucketに対してGetBucket操作を実行できる” という権限付与ポリシーの場合、Resourceは<code>SampleBucket</code> です。
+* <code>Action</code> - AlibabaCloudの各種サービスでどんな操作が実行できるか。サービスを個別指定することも可能。たとえば ”ユーザAがリソースSampleBucketに対してGetBucket操作を実行できる” という権限付与ポリシーの場合、Actionは<code>GetBucket</code> です。
+* <code>Condition</code> - 権限付与が有効になる条件です。たとえば、”ユーザAが2018年12月31日より前にリソース SampleBucketに対してGetBucket操作を実行できる” という権限付与ポリシーの場合、Conditionは <code>2018年12月31日より前</code> です。</p>
+
+<p>他の例もみてみましょう。
+”リクエスト送信者のソースIPアドレスが 42.160.1.0であれば、SampleBucketというOSSバケットに対して読み取り専用操作を実行できる” というRAMポリシーであれば、リスト5.3.1.2のようにまとめます。
+▼リスト 5.3.1.2 JSON 形式のポリシードキュメント</p>
+
+<pre><code>{
+    &quot;Version&quot;: &quot;1&quot;,
+    &quot;Statement&quot;:
+    [{
+        &quot;Effect&quot;: &quot;Allow&quot;,
+        &quot;Action&quot;: [&quot;oss:List*&quot;, &quot;oss:Get*&quot;],
+        &quot;Resource&quot;: [&quot;acs:oss:*:*:samplebucket&quot;, &quot;acs:oss:*:*:samplebucket/*&quot;],
+        &quot;Condition&quot;:
+        {
+            &quot;IpAddress&quot;:
+            {
+                &quot;acs:SourceIp&quot;: &quot;42.160.1.0&quot;
+            }
+        }
+    }]
+}
+</code></pre>
+
+<h3 id="5-3-2-ram-ホ-リシー">5.3.2 RAM ポリシー</h3>
+
+<p>ポリシードキュメントを保持するリソースが「RAM ポリシー」です。リスト5.3のように、ポリシー名とポリシードキュメントを設定します。</p>
+
+<p>▼リスト 5.3 RAM ポリシーの定義</p>
+
+<pre><code>resource &quot;alicloud_ram_policy&quot; &quot;terraform_example&quot; {
+   name   = &quot;terraform_example&quot;
+   policy = data.alicloud_ram_policy_document.allow_describe_regions.json
+}
+</code></pre>
+
+<h2 id="5-4-ram-ポリシーの作成">5.4 RAM ポリシーの作成</h2>
+
+<p>ここまではRAMポリシーの基本的なことを記載しました。それではTerraformによるRAMポリシーの作成をします。
+例として、リスト5.4のように <code>test_policy</code> というRAMポリシー名で、mybucket というOSSバケットに対して読み取り専用操作を実行できるという権限ルールを新しく作成します。</p>
+
+<p>▼リスト 5.4 <code>test_policy</code> RAM ポリシーの定義</p>
+
+<pre><code>resource &quot;alicloud_ram_policy&quot; &quot;policy&quot; {
+  name = &quot;test_policy&quot;
+  statement = [
+    {
+      effect = &quot;Allow&quot;
+      action = [
+        &quot;oss:ListObjects&quot;,
+        &quot;oss:GetObject&quot;
+      ]
+      resource = [
+        &quot;acs:oss:*:*:mybucket&quot;,
+        &quot;acs:oss:*:*:mybucket/*&quot;
+      ]
+    }
+  ]
+  description = &quot;this is a policy test&quot;
+  force = true
+}
+</code></pre>
+
+<p>上記で記載したRAMポリシー以外にオプション（任意）で他ルールらパラメータや構成を指定することもできます。
+* <code>name</code> - （必須）RAMポリシーの名前。
+* <code>statement</code>- （必須）RAMポリシードキュメントのステートメント。
+* <code>resource</code> - （必須）許可される特定のオブジェクト。
+* <code>action</code> - （必須）resourceに対するどんな操作が許可されてるか。
+* <code>effect</code> - （必須）actionが許可されているかどうかを示します。有効な値はAllowand Denyです。
+* <code>version</code> - （オプション）RAMポリシードキュメントのバージョン。デフォルト値は1です。
+* <code>description</code> - （オプション）RAMポリシーの説明。
+* <code>force</code> - （オプション）このパラメータはリソースの破棄に使用されます。デフォルト値はfalseです。</p>
+
+<p>このリソースを実行することにより、以下の属性情報が出力されます。</p>
+
+<ul>
+<li><code>id</code> - ポリシーID</li>
+<li><code>name</code> - ポリシー名</li>
+<li><code>type</code> - ポリシータイプ。</li>
+<li><code>description</code> - ポリシーの説明</li>
+<li><code>statement</code> - 政策文書のステートメントのリスト。</li>
+<li><code>document</code> - ポリシー文書</li>
+<li><code>version</code> - ポリシー文書のバージョン。</li>
+<li><code>attachment_count</code> - ポリシー添付ファイル数。</li>
+</ul>
+
+<p>その他、詳しくは<a href="https://www.terraform.io/docs/providers/alicloud/r/ram_policy.html">AliCloudのterraform-RAM</a>を参照してみてください。</p>
+
+<h2 id="5-5-ramロールを作成し-ramポリシーへアタッチ">5.5 RAMロールを作成し、RAMポリシーへアタッチ</h2>
+
+<p>今度は別のパターン、RAMロールを作成し、RAMポリシーへアタッチしてみます。
+例として、<code>test_role</code>というRAMロールを作成し、これを<code>test_policy</code>というRAMポリシーへアタッチします。
+アタッチするときは<code>alicloud_ram_role_policy_attachment</code>という構文を使います。</p>
+
+<pre><code>resource &quot;alicloud_ram_role&quot; &quot;role&quot; {
+  name = &quot;test_role&quot;
+  ram_users = [&quot;acs:ram::${your_account_id}:root&quot;, &quot;acs:ram::${other_account_id}:user/username&quot;]
+  services = [&quot;apigateway.aliyuncs.com&quot;, &quot;ecs.aliyuncs.com&quot;]
+  description = &quot;this is a role test.&quot;
+  force = true
+}
+
+
+resource &quot;alicloud_ram_policy&quot; &quot;policy&quot; {
+  name = &quot;test_policy&quot;
+  statement = [
+          {
+            effect = &quot;Allow&quot;
+            action = [
+              &quot;oss:ListObjects&quot;,
+              &quot;oss:GetObject&quot;]
+            resource = [
+              &quot;acs:oss:*:*:mybucket&quot;,
+              &quot;acs:oss:*:*:mybucket/*&quot;]
+          }]
+  description = &quot;this is a policy test&quot;
+  force = true
+}
+
+resource &quot;alicloud_ram_role_policy_attachment&quot; &quot;attach&quot; {
+  policy_name = &quot;${alicloud_ram_policy.policy.name}&quot;
+  policy_type = &quot;${alicloud_ram_policy.policy.type}&quot;
+  role_name = &quot;${alicloud_ram_role.role.name}&quot;
+}
+</code></pre>
+
+<p>この<code>alicloud_ram_role_policy_attachment</code>リソースで必要なパラメータは以下3点です。</p>
+
+<ul>
+<li><code>role_name</code> - （必須）RAMロールの名前。</li>
+<li><code>policy_name</code> - （必須）RAMポリシーの名前。</li>
+<li><code>policy_type</code> - （必須、ForceNew）RAMポリシーの種類</li>
+</ul>
+
+<p>このリソースを実行することにより、以下の属性情報が出力されます。</p>
+
+<ul>
+<li><code>id</code> - 添付ファイルID。</li>
+<li><code>role_name</code> - ロール名</li>
+<li><code>policy_name</code> - ポリシー名</li>
+<li><code>policy_type</code> - ポリシータイプ。</li>
+</ul>
+
+<p>その他、詳しくは<a href="https://www.terraform.io/docs/providers/alicloud/r/ram_role_policy_attachment.html">AliCloudのterraform-RAMポリシーへのアタッチ</a>を参照してみてください。</p>
+
+<h2 id="5-6-ramポリシーを対象リソース-サービスへアタッチ">5.6 RAMポリシーを対象リソース・サービスへアタッチ</h2>
+
+<p>ここまで、RAMポリシー<code>test_role</code>を作成したら、今度は対象のリソース・サービスにアタッチしてみます。ここは<code>ECS_instance</code>らECSインスタンスへアタッチしてみます。
+アタッチするときは<code>alicloud_ram_role_attachment</code>構文を使います。</p>
+
+<pre><code>resource &quot;alicloud_ram_role&quot; &quot;role&quot; {
+  name = &quot;test_role&quot;
+  services = [&quot;apigateway.aliyuncs.com&quot;, &quot;ecs.aliyuncs.com&quot;]
+  ram_users = [&quot;acs:ram::${your_account_id}:root&quot;, &quot;acs:ram::${other_account_id}:user/username&quot;]
+  description = &quot;this is a role test.&quot;
+  force = true
+}
+
+resource &quot;alicloud_instance&quot; &quot;ECS_instance&quot; {
+  instance_name   = &quot;ECS_instance_for_terraform&quot;
+  host_name       = &quot;ECS_instance_for_terraform&quot;
+  instance_type   = &quot;ecs.n4.small&quot;
+  image_id        = &quot;centos_7_04_64_20G_alibase_201701015.vhd&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  security_groups = [&quot;${alicloud_security_group.sg.id}&quot;]
+  availability_zone = &quot;${var.zone}&quot;
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+}
+
+resource &quot;alicloud_ram_role_attachment&quot; &quot;attach&quot; {
+  role_name = &quot;${alicloud_ram_role.role.name}&quot;
+  instance_ids = [&quot;${alicloud_instance.ECS_instance.id}&quot;]
+}
+</code></pre>
+
+<p><a href="https://www.terraform.io/docs/providers/alicloud/r/ram_role_attachment.html">ECSアタッチでより詳しくはこちら</a>を参照してみてください。</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/" title="ガイドライン"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/" title="利用手順" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/tech-docs/js/clipboard.min.js?1559550758"></script>
+    <script src="/tech-docs/js/perfect-scrollbar.min.js?1559550758"></script>
+    <script src="/tech-docs/js/perfect-scrollbar.jquery.min.js?1559550758"></script>
+    <script src="/tech-docs/js/jquery.sticky.js?1559550758"></script>
+    <script src="/tech-docs/js/featherlight.min.js?1559550758"></script>
+    <script src="/tech-docs/js/html5shiv-printshiv.min.js?1559550758"></script>
+    <script src="/tech-docs/js/highlight.pack.js?1559550758"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/tech-docs/js/modernizr.custom-3.6.0.js?1559550758"></script>
+    <script src="/tech-docs/js/learn.js?1559550758"></script>
+    <script src="/tech-docs/js/hugo-learn.js?1559550758"></script>
+
+    <link href="/tech-docs/mermaid/mermaid.css?1559550758" type="text/css" rel="stylesheet" />
+    <script src="/tech-docs/mermaid/mermaid.js?1559550758"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/</loc>
+    <lastmod>2019-05-14T10:37:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</loc>
+    <lastmod>2019-05-14T10:37:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/authority_management/</loc>
+    <lastmod>2019-05-14T10:37:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/</loc>
+    <lastmod>2019-05-12T12:30:18+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/create-virtual-servers/</loc>
+    <lastmod>2019-05-12T12:30:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/simple_compare/</loc>
+    <lastmod>2019-04-15T10:37:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/</loc>
+    <lastmod>2019-04-15T10:37:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/how_to_use_terraform/</loc>
+    <lastmod>2019-04-14T10:37:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

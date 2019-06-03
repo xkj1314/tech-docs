@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/tech-docs/images/favicon.png" type="image/png">
+
+    <title>第1章 ECSインスタンスの作成 :: SBCloud Documentation</title>
+
+    
+    <link href="/tech-docs/css/nucleus.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/fontawesome-all.min.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/hybrid.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/featherlight.min.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/perfect-scrollbar.min.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/auto-complete.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/atom-one-dark-reasonable.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/theme.css?1559550758" rel="stylesheet">
+    <link href="/tech-docs/css/hugo-theme.css?1559550758" rel="stylesheet">
+    
+      <link href="/tech-docs/css/theme-blue.css?1559550758" rel="stylesheet">
+    
+
+    <script src="/tech-docs/js/jquery-3.3.1.min.js?1559550758"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <style type="text/css">
+     
+ 
+.topnav {
+  position: relative;
+  background-color: #333;
+  overflow: hidden;
+}
+
+ 
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  z-index: 3;
+}
+
+ 
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+ 
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+  </head>
+  <body class="" data-url="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/create-virtual-servers/">
+    <img src="http://localhost/SBC_HEADER.png" alt="ヘッダー">
+
+    <nav id="sidebar" class="">
+
+
+
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/" title="ガイドライン" class="dd-item 
+        
+        
+        ">
+      <a href="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/">
+          ガイドライン
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/authority_management/" title="第5章 権限管理" class="dd-item ">
+        <a href="/tech-docs/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/authority_management/">
+        第5章 権限管理
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/" title="利用手順" class="dd-item 
+        parent
+        
+        ">
+      <a href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/">
+          利用手順
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/create-virtual-servers/" title="第1章 ECSインスタンスの作成" class="dd-item active">
+        <a href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/create-virtual-servers/">
+        第1章 ECSインスタンスの作成
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/how_to_use_terraform/" title="第3章 Terraform の基本" class="dd-item ">
+        <a href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/how_to_use_terraform/">
+        第3章 Terraform の基本
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/" title="比較資料" class="dd-item 
+        
+        
+        ">
+      <a href="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/">
+          比較資料
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/simple_compare/" title="云计算基础(クラウドコンピューティングの基盤)" class="dd-item ">
+        <a href="/tech-docs/%E6%AF%94%E8%BC%83%E8%B3%87%E6%96%99/simple_compare/">
+        云计算基础(クラウドコンピューティングの基盤)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/tech-docs/'>SBCloud Documentation</a> > <a href='/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/'>利用手順</a> > 第1章 ECSインスタンスの作成
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              第1章 ECSインスタンスの作成
+            </h1>
+          
+
+        
+
+
+
+<p>この記事では、Terraformを使用してECSインスタンスを作成する方法について説明します。</p>
+
+<ol>
+<li><p>VPCとVSwitchを作成します</p>
+
+<ol>
+<li><p>terraform.tfファイルを作成して次のように入力し、現在の実行ディレクトリに保存します。</p>
+
+<pre><code>resource &quot;alicloud_vpc&quot; &quot;vpc&quot; {
+  name       = &quot;tf_test_foo&quot;
+  cidr_block = &quot;172.16.0.0/12&quot;
+}
+        
+resource &quot;alicloud_vswitch&quot; &quot;vsw&quot; {
+  vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
+  cidr_block        = &quot;172.16.0.0/21&quot;
+  availability_zone = &quot;cn-beijing-b&quot;
+}
+</code></pre></li>
+
+<li><p>作成を開始するために <code>terraform apply</code>を実行してください。</p></li>
+
+<li><p>作成したVPCとVSwitchを表示するために <code>terraform show</code>を実行します。</p>
+
+<p>VPCコンソールにログオンして、VPCとVSwitchの属性を表示することもできます。</p></li>
+</ol></li>
+
+<li><p>セキュリティグループを作成し、前の手順で作成したVPCに適用します。</p>
+
+<ol>
+<li><p>terraform.tfファイルに以下を追加します。</p>
+
+<pre><code>resource &quot;alicloud_security_group&quot; &quot;default&quot; {
+  name = &quot;default&quot;
+  vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
+}
+        
+resource &quot;alicloud_security_group_rule&quot; &quot;allow_all_tcp&quot; {
+  type              = &quot;ingress&quot;
+  ip_protocol       = &quot;tcp&quot;
+  nic_type          = &quot;intranet&quot;
+  policy            = &quot;accept&quot;
+  port_range        = &quot;1/65535&quot;
+  priority          = 1
+  security_group_id = &quot;${alicloud_security_group.default.id}&quot;
+  cidr_ip           = &quot;0.0.0.0/0&quot;
+}
+</code></pre></li>
+
+<li><p>作成を開始するために <code>terraform apply</code>を実行してください。</p></li>
+
+<li><p><code>terraform show</code>を実行して、作成されたセキュリティグループとセキュリティグループのルールを表示します。</p>
+
+<p>セキュリティグループとセキュリティグループのルールを表示するためにECSコンソールにログオンすることもできます。</p></li>
+</ol></li>
+
+<li><p>ECSインスタンスを作成します。</p>
+
+<ol>
+<li><p>terraform.tfファイルに以下を追加します:</p>
+
+<pre><code>resource &quot;alicloud_instance&quot; &quot;instance&quot; {
+  # cn-beijing
+  availability_zone = &quot;cn-beijing-b&quot;
+  security_groups = [&quot;${alicloud_security_group.default.*.id}&quot;]
+        
+  # series III
+  instance_type        = &quot;ecs.n2.small&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  image_id             = &quot;ubuntu_140405_64_40G_cloudinit_20161115.vhd&quot;
+  instance_name        = &quot;test_foo&quot;
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+  internet_max_bandwidth_out = 10
+  password = &quot;&lt;replace_with_your_password&gt;&quot;
+}
+</code></pre>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+<li>上記の例では、「internet_max_bandwidth_out = 10」が指定されています。そのため、インスタンスにはパブリックIPが自動的に割り当てられます。</li>
+<li>パラメータの詳細な説明については、<a href="https://www.terraform.io/docs/providers/alicloud/d/instances.html">Alibaba Cloudのパラメータの説明</a>を参照してください。</li>
+</ul></li>
+
+<li><p>作成を開始するために <code>terraform apply</code>を実行してください。</p></li>
+
+<li><p>作成したECSインスタンスを表示するために <code>terraform show</code>を実行してください。</p></li>
+
+<li><p>ssh root@<publicip\>を実行して、ECSインスタンスにアクセスするためのパスワードを入力します。</p>
+
+<pre><code>provider &quot;alicloud&quot; {}
+  
+resource &quot;alicloud_vpc&quot; &quot;vpc&quot; {
+name       = &quot;tf_test_foo&quot;
+cidr_block = &quot;172.16.0.0/12&quot;
+}
+
+resource &quot;alicloud_vswitch&quot; &quot;vsw&quot; {
+vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
+cidr_block        = &quot;172.16.0.0/21&quot;
+availability_zone = &quot;cn-beijing-b&quot;
+}
+
+
+resource &quot;alicloud_security_group&quot; &quot;default&quot; {
+name = &quot;default&quot;
+vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
+}
+
+
+resource &quot;alicloud_instance&quot; &quot;instance&quot; {
+# cn-beijing
+availability_zone = &quot;cn-beijing-b&quot;
+security_groups = [&quot;${alicloud_security_group.default.*.id}&quot;]
+
+# series III
+instance_type        = &quot;ecs.n2.small&quot;
+system_disk_category = &quot;cloud_efficiency&quot;
+image_id             = &quot;ubuntu_140405_64_40G_cloudinit_20161115.vhd&quot;
+instance_name        = &quot;test_foo&quot;
+vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+internet_max_bandwidth_out = 10
+}
+
+
+resource &quot;alicloud_security_group_rule&quot; &quot;allow_all_tcp&quot; {
+type              = &quot;ingress&quot;
+ip_protocol       = &quot;tcp&quot;
+nic_type          = &quot;intranet&quot;
+policy            = &quot;accept&quot;
+port_range        = &quot;1/65535&quot;
+priority          = 1
+security_group_id = &quot;${alicloud_security_group.default.id}&quot;
+cidr_ip           = &quot;0.0.0.0/0&quot;
+}
+</code></pre></li>
+</ol></li>
+</ol>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/" title="利用手順"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/tech-docs/%E5%88%A9%E7%94%A8%E6%89%8B%E9%A0%86/how_to_use_terraform/" title="第3章 Terraform の基本" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/tech-docs/js/clipboard.min.js?1559550758"></script>
+    <script src="/tech-docs/js/perfect-scrollbar.min.js?1559550758"></script>
+    <script src="/tech-docs/js/perfect-scrollbar.jquery.min.js?1559550758"></script>
+    <script src="/tech-docs/js/jquery.sticky.js?1559550758"></script>
+    <script src="/tech-docs/js/featherlight.min.js?1559550758"></script>
+    <script src="/tech-docs/js/html5shiv-printshiv.min.js?1559550758"></script>
+    <script src="/tech-docs/js/highlight.pack.js?1559550758"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/tech-docs/js/modernizr.custom-3.6.0.js?1559550758"></script>
+    <script src="/tech-docs/js/learn.js?1559550758"></script>
+    <script src="/tech-docs/js/hugo-learn.js?1559550758"></script>
+
+    <link href="/tech-docs/mermaid/mermaid.css?1559550758" type="text/css" rel="stylesheet" />
+    <script src="/tech-docs/mermaid/mermaid.js?1559550758"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
