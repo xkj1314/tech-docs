@@ -11,6 +11,7 @@ git config --global user.name $CIRCLE_USERNAME
 
 # gh-pagesブランチをdeployディレクトリにクローン
 git clone -q --branch=gh-pages $CIRCLE_REPOSITORY_URL # $DEPLOY_DIR
+git checkout gh-pages
 
 # rsyncでhugoで生成したHTMLをコピー
 # cd $DEPLOY_DIR
