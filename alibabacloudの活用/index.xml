@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SBCloud Documentation</title>
-    <link>https://sbcloud.github.io/tech-docs/</link>
-    <description>Recent content on SBCloud Documentation</description>
+    <title>AlibabaCloudの活用 on SBCloud Documentation</title>
+    <link>https://sbcloud.github.io/tech-docs/alibabacloud%E3%81%AE%E6%B4%BB%E7%94%A8/</link>
+    <description>Recent content in AlibabaCloudの活用 on SBCloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 14 May 2019 10:37:37 +0900</lastBuildDate>
     
-	<atom:link href="https://sbcloud.github.io/tech-docs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sbcloud.github.io/tech-docs/alibabacloud%E3%81%AE%E6%B4%BB%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -24,23 +24,6 @@ graph LR; A(&amp;quot;ポリシーサービスに&amp;lt;br&amp;gt;対する権�
 5.3 ポリシー 権限はポリシーで定義します。ポリシーでは「実行可能なアクション」や「操作可能なリソース」を指定でき、柔軟に権限が設定できます。
 5.3.1 ポリシードキュメント ポリシードキュメントはJSON形式で管理しており、リスト5.3.1.1のようにまとめます。 ▼リスト 5.3.1.1 JSON 形式のポリシードキュメント
 { &amp;quot;Statement&amp;quot;: [ { &amp;quot;Action&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;*&amp;quot; } ], &amp;quot;Version&amp;quot;: &amp;quot;1&amp;quot; }  ポリシードキュメントでは、次のような要素を記述します。 * Effect - 許可する場合はAllow、許可しない場合はDeny * Resource - AlibabaCloudの操作可能なリソース・許可されたオブジェクトはなにかを指定します。たとえば ”ユーザAがリソースSampleBucketに対してGetBucket操作を実行できる” という権限付与ポリシーの場合、ResourceはSampleBucket です。 * Action - AlibabaCloudの各種サービスでどんな操作が実行できるか。サービスを個別指定することも可能。たとえば ”ユーザAがリソースSampleBucketに対してGetBucket操作を実行できる” という権限付与ポリシーの場合、ActionはGetBucket です。 * Condition - 権限付与が有効になる条件です。たとえば、”ユーザAが2018年12月31日より前にリソース SampleBucketに対してGetBucket操作を実行できる” という権限付与ポリシーの場合、Conditionは 2018年12月31日より前 です。</description>
-    </item>
-    
-    <item>
-      <title>第1章 ECSインスタンスの作成</title>
-      <link>https://sbcloud.github.io/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/</link>
-      <pubDate>Sun, 12 May 2019 12:30:18 +0800</pubDate>
-      
-      <guid>https://sbcloud.github.io/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/</guid>
-      <description>この記事では、Terraformを使用してECSインスタンスを作成する方法について説明します。
- VPCとVSwitchを作成します
- terraform.tfファイルを作成して次のように入力し、現在の実行ディレクトリに保存します。
-resource &amp;quot;alicloud_vpc&amp;quot; &amp;quot;vpc&amp;quot; { name = &amp;quot;tf_test_foo&amp;quot; cidr_block = &amp;quot;172.16.0.0/12&amp;quot; } resource &amp;quot;alicloud_vswitch&amp;quot; &amp;quot;vsw&amp;quot; { vpc_id = &amp;quot;${alicloud_vpc.vpc.id}&amp;quot; cidr_block = &amp;quot;172.16.0.0/21&amp;quot; availability_zone = &amp;quot;cn-beijing-b&amp;quot; }  作成を開始するために terraform applyを実行してください。
- 作成したVPCとVSwitchを表示するために terraform showを実行します。
-VPCコンソールにログオンして、VPCとVSwitchの属性を表示することもできます。
-  セキュリティグループを作成し、前の手順で作成したVPCに適用します。
- terraform.tfファイルに以下を追加します。
-resource &amp;quot;alicloud_security_group&amp;quot; &amp;quot;default&amp;quot; { name = &amp;quot;default&amp;quot; vpc_id = &amp;quot;${alicloud_vpc.vpc.id}&amp;quot; } resource &amp;quot;alicloud_security_group_rule&amp;quot; &amp;quot;allow_all_tcp&amp;quot; { type = &amp;quot;ingress&amp;quot; ip_protocol = &amp;quot;tcp&amp;quot; nic_type = &amp;quot;intranet&amp;quot; policy = &amp;quot;accept&amp;quot; port_range = &amp;quot;1/65535&amp;quot; priority = 1 security_group_id = &amp;quot;${alicloud_security_group.</description>
     </item>
     
     <item>

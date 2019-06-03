@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>最初の手引き on SBCloud Documentation</title>
+    <link>https://sbcloud.github.io/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/</link>
+    <description>Recent content in 最初の手引き on SBCloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 12 May 2019 12:30:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://sbcloud.github.io/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>第1章 ECSインスタンスの作成</title>
+      <link>https://sbcloud.github.io/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/</link>
+      <pubDate>Sun, 12 May 2019 12:30:18 +0800</pubDate>
+      
+      <guid>https://sbcloud.github.io/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/</guid>
+      <description>この記事では、Terraformを使用してECSインスタンスを作成する方法について説明します。
+ VPCとVSwitchを作成します
+ terraform.tfファイルを作成して次のように入力し、現在の実行ディレクトリに保存します。
+resource &amp;quot;alicloud_vpc&amp;quot; &amp;quot;vpc&amp;quot; { name = &amp;quot;tf_test_foo&amp;quot; cidr_block = &amp;quot;172.16.0.0/12&amp;quot; } resource &amp;quot;alicloud_vswitch&amp;quot; &amp;quot;vsw&amp;quot; { vpc_id = &amp;quot;${alicloud_vpc.vpc.id}&amp;quot; cidr_block = &amp;quot;172.16.0.0/21&amp;quot; availability_zone = &amp;quot;cn-beijing-b&amp;quot; }  作成を開始するために terraform applyを実行してください。
+ 作成したVPCとVSwitchを表示するために terraform showを実行します。
+VPCコンソールにログオンして、VPCとVSwitchの属性を表示することもできます。
+  セキュリティグループを作成し、前の手順で作成したVPCに適用します。
+ terraform.tfファイルに以下を追加します。
+resource &amp;quot;alicloud_security_group&amp;quot; &amp;quot;default&amp;quot; { name = &amp;quot;default&amp;quot; vpc_id = &amp;quot;${alicloud_vpc.vpc.id}&amp;quot; } resource &amp;quot;alicloud_security_group_rule&amp;quot; &amp;quot;allow_all_tcp&amp;quot; { type = &amp;quot;ingress&amp;quot; ip_protocol = &amp;quot;tcp&amp;quot; nic_type = &amp;quot;intranet&amp;quot; policy = &amp;quot;accept&amp;quot; port_range = &amp;quot;1/65535&amp;quot; priority = 1 security_group_id = &amp;quot;${alicloud_security_group.</description>
+    </item>
+    
+  </channel>
+</rss>

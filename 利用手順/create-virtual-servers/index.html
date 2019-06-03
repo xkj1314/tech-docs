@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.55.2" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>第1章 ECSインスタンスの作成 :: SBCloud Documentation</title>
 
     
-    <link href="/tech-docs/css/nucleus.css?1559551160" rel="stylesheet">
-    <link href="/tech-docs/css/fontawesome-all.min.css?1559551160" rel="stylesheet">
-    <link href="/tech-docs/css/hybrid.css?1559551160" rel="stylesheet">
-    <link href="/tech-docs/css/featherlight.min.css?1559551160" rel="stylesheet">
-    <link href="/tech-docs/css/perfect-scrollbar.min.css?1559551160" rel="stylesheet">
-    <link href="/tech-docs/css/auto-complete.css?1559551160" rel="stylesheet">
-    <link href="/tech-docs/css/atom-one-dark-reasonable.css?1559551160" rel="stylesheet">
-    <link href="/tech-docs/css/theme.css?1559551160" rel="stylesheet">
-    <link href="/tech-docs/css/hugo-theme.css?1559551160" rel="stylesheet">
+    <link href="/tech-docs/css/nucleus.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/fontawesome-all.min.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/hybrid.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/featherlight.min.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/perfect-scrollbar.min.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/auto-complete.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/atom-one-dark-reasonable.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/theme.css?1559536555" rel="stylesheet">
+    <link href="/tech-docs/css/hugo-theme.css?1559536555" rel="stylesheet">
     
-      <link href="/tech-docs/css/theme-blue.css?1559551160" rel="stylesheet">
+      <link href="/tech-docs/css/theme-blue.css?1559536555" rel="stylesheet">
     
 
-    <script src="/tech-docs/js/jquery-3.3.1.min.js?1559551160"></script>
+    <script src="/tech-docs/js/jquery-3.3.1.min.js?1559536555"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -422,56 +422,56 @@ resource &quot;alicloud_security_group_rule&quot; &quot;allow_all_tcp&quot; {
 
 <li><p>作成したECSインスタンスを表示するために <code>terraform show</code>を実行してください。</p></li>
 
-<li><p>ssh root@<publicip\>を実行して、ECSインスタンスにアクセスするためのパスワードを入力します。</p>
+<li><p>ssh root@<publicip\>を実行して、ECSインスタンスにアクセスするためのパスワードを入力します。</p></li>
+</ol></li>
+</ol>
 
 <pre><code>provider &quot;alicloud&quot; {}
   
 resource &quot;alicloud_vpc&quot; &quot;vpc&quot; {
-name       = &quot;tf_test_foo&quot;
-cidr_block = &quot;172.16.0.0/12&quot;
+  name       = &quot;tf_test_foo&quot;
+  cidr_block = &quot;172.16.0.0/12&quot;
 }
 
 resource &quot;alicloud_vswitch&quot; &quot;vsw&quot; {
-vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
-cidr_block        = &quot;172.16.0.0/21&quot;
-availability_zone = &quot;cn-beijing-b&quot;
+  vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
+  cidr_block        = &quot;172.16.0.0/21&quot;
+  availability_zone = &quot;cn-beijing-b&quot;
 }
 
 
 resource &quot;alicloud_security_group&quot; &quot;default&quot; {
-name = &quot;default&quot;
-vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
+  name = &quot;default&quot;
+  vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
 }
 
 
 resource &quot;alicloud_instance&quot; &quot;instance&quot; {
-# cn-beijing
-availability_zone = &quot;cn-beijing-b&quot;
-security_groups = [&quot;${alicloud_security_group.default.*.id}&quot;]
+  # cn-beijing
+  availability_zone = &quot;cn-beijing-b&quot;
+  security_groups = [&quot;${alicloud_security_group.default.*.id}&quot;]
 
-# series III
-instance_type        = &quot;ecs.n2.small&quot;
-system_disk_category = &quot;cloud_efficiency&quot;
-image_id             = &quot;ubuntu_140405_64_40G_cloudinit_20161115.vhd&quot;
-instance_name        = &quot;test_foo&quot;
-vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
-internet_max_bandwidth_out = 10
+  # series III
+  instance_type        = &quot;ecs.n2.small&quot;
+  system_disk_category = &quot;cloud_efficiency&quot;
+  image_id             = &quot;ubuntu_140405_64_40G_cloudinit_20161115.vhd&quot;
+  instance_name        = &quot;test_foo&quot;
+  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
+  internet_max_bandwidth_out = 10
 }
 
 
 resource &quot;alicloud_security_group_rule&quot; &quot;allow_all_tcp&quot; {
-type              = &quot;ingress&quot;
-ip_protocol       = &quot;tcp&quot;
-nic_type          = &quot;intranet&quot;
-policy            = &quot;accept&quot;
-port_range        = &quot;1/65535&quot;
-priority          = 1
-security_group_id = &quot;${alicloud_security_group.default.id}&quot;
-cidr_ip           = &quot;0.0.0.0/0&quot;
+  type              = &quot;ingress&quot;
+  ip_protocol       = &quot;tcp&quot;
+  nic_type          = &quot;intranet&quot;
+  policy            = &quot;accept&quot;
+  port_range        = &quot;1/65535&quot;
+  priority          = 1
+  security_group_id = &quot;${alicloud_security_group.default.id}&quot;
+  cidr_ip           = &quot;0.0.0.0/0&quot;
 }
-</code></pre></li>
-</ol></li>
-</ol>
+</code></pre>
 
 
 <footer class=" footline" >
@@ -647,20 +647,20 @@ cidr_ip           = &quot;0.0.0.0/0&quot;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/tech-docs/js/clipboard.min.js?1559551160"></script>
-    <script src="/tech-docs/js/perfect-scrollbar.min.js?1559551160"></script>
-    <script src="/tech-docs/js/perfect-scrollbar.jquery.min.js?1559551160"></script>
-    <script src="/tech-docs/js/jquery.sticky.js?1559551160"></script>
-    <script src="/tech-docs/js/featherlight.min.js?1559551160"></script>
-    <script src="/tech-docs/js/html5shiv-printshiv.min.js?1559551160"></script>
-    <script src="/tech-docs/js/highlight.pack.js?1559551160"></script>
+    <script src="/tech-docs/js/clipboard.min.js?1559536555"></script>
+    <script src="/tech-docs/js/perfect-scrollbar.min.js?1559536555"></script>
+    <script src="/tech-docs/js/perfect-scrollbar.jquery.min.js?1559536555"></script>
+    <script src="/tech-docs/js/jquery.sticky.js?1559536555"></script>
+    <script src="/tech-docs/js/featherlight.min.js?1559536555"></script>
+    <script src="/tech-docs/js/html5shiv-printshiv.min.js?1559536555"></script>
+    <script src="/tech-docs/js/highlight.pack.js?1559536555"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/tech-docs/js/modernizr.custom-3.6.0.js?1559551160"></script>
-    <script src="/tech-docs/js/learn.js?1559551160"></script>
-    <script src="/tech-docs/js/hugo-learn.js?1559551160"></script>
+    <script src="/tech-docs/js/modernizr.custom-3.6.0.js?1559536555"></script>
+    <script src="/tech-docs/js/learn.js?1559536555"></script>
+    <script src="/tech-docs/js/hugo-learn.js?1559536555"></script>
 
-    <link href="/tech-docs/mermaid/mermaid.css?1559551160" type="text/css" rel="stylesheet" />
-    <script src="/tech-docs/mermaid/mermaid.js?1559551160"></script>
+    <link href="/tech-docs/mermaid/mermaid.css?1559536555" type="text/css" rel="stylesheet" />
+    <script src="/tech-docs/mermaid/mermaid.js?1559536555"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
