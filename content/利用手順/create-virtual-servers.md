@@ -1,7 +1,7 @@
 ---
 title: "第1章 ECSインスタンスの作成"
 date: 2019-05-12T12:30:18+08:00
-draft: true
+draft: false
 ---
 
 この記事では、Terraformを使用してECSインスタンスを作成する方法について説明します。
