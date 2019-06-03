@@ -173,6 +173,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     }
 }
 #sidebar {
+    margin-top: 55px;
     background-color: #322A38;
     position: fixed;
     top: 0;
@@ -406,10 +407,12 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #body .nav:hover {
     background: #F6F6F6;
 }
-#body .nav.nav-pref {
-    left: 0;
+#body .nav.nav-prev {
+    margin-top: 55px;
+    left: auto;
 }
 #body .nav.nav-next {
+    margin-top: 55px;
     right: 0;
 }
 #body-inner {
