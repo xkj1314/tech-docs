@@ -1,9 +1,11 @@
-baseURL = "/"
-languageCode = "en-us"
+baseURL = "https://sbcloud.github.io/tech-docs/"
+hasCJKLanguage = true
+languageCode = "ja-jp"
 title = "SBCloud Documentation"
 theme= "hugo-theme-learn"
 staticDir = ["static"]
 pluralizelisttitles = false
+publishDir = "docs"
 [params]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "blue"
