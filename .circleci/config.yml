@@ -1,9 +1,6 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - master
     docker:
       - image: cibuilds/hugo:latest
     working_directory: ~/hugo
