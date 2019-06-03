@@ -19,15 +19,12 @@ jobs:
           name: Building blog pages
           command: |
             HUGO_ENV=production hugo -v
-            ls -tlar  docs/
             hugo
-            ls -tlar  docs/
       - add_ssh_keys:
           fingerprints:
             - "d2:51:83:81:f4:e3:ee:04:b2:40:19:14:19:ea:ec:fd"
       - deploy:
           name: Deploy to GitHub Pages
           command: |
-            ls -tlar  docs/
             chmod +x ./.circleci/deploy.sh
             sh ./.circleci/deploy.sh
