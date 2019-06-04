@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/tech-docs/images/favicon.png" type="image/png">
 
-    <title>第1章 ECSインスタンスの作成 :: SBCloud Documentation</title>
+    <title>ECS :: SBCloud Documentation</title>
 
     
     <link href="/tech-docs/css/nucleus.css?1559632606" rel="stylesheet">
@@ -67,7 +67,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/">
+  <body class="" data-url="/tech-docs/faqmore/ecs/">
     <img src="http://localhost/SBC_HEADER.png" alt="ヘッダー">
 
     <nav id="sidebar" class="">
@@ -87,7 +87,7 @@
   
     
     <li data-nav-id="/tech-docs/faqmore/" title="FAQ&amp;More" class="dd-item 
-        
+        parent
         
         ">
       <a href="/tech-docs/faqmore/">
@@ -110,7 +110,7 @@
  
   
     
-      <li data-nav-id="/tech-docs/faqmore/ecs/" title="ECS" class="dd-item ">
+      <li data-nav-id="/tech-docs/faqmore/ecs/" title="ECS" class="dd-item active">
         <a href="/tech-docs/faqmore/ecs/">
         ECS
         
@@ -244,7 +244,7 @@
   
     
     <li data-nav-id="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/" title="最初の手引き" class="dd-item 
-        parent
+        
         
         ">
       <a href="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/">
@@ -267,7 +267,7 @@
  
   
     
-      <li data-nav-id="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/" title="第1章 ECSインスタンスの作成" class="dd-item active">
+      <li data-nav-id="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/" title="第1章 ECSインスタンスの作成" class="dd-item ">
         <a href="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/">
         第1章 ECSインスタンスの作成
         
@@ -335,7 +335,7 @@
             
           
           
-            <a href='/tech-docs/'>SBCloud Documentation</a> > <a href='/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/'>最初の手引き</a> > 第1章 ECSインスタンスの作成
+            <a href='/tech-docs/'>SBCloud Documentation</a> > <a href='/tech-docs/faqmore/'>FAQ&More</a> > ECS
           
          
           
@@ -348,7 +348,76 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#一般仕様">一般仕様</a>
+<ul>
+<li>
+<ul>
+<li><a href="#q-ゾーンの識別文字のマッピング仕様について">Q. ゾーンの識別文字のマッピング仕様について</a></li>
+<li><a href="#q-1つのアカウント-リージョン配下のecs購入台数制限について">Q. 1つのアカウント/リージョン配下のECS購入台数制限について</a></li>
+<li><a href="#q-サブスクリプションecsのライフサイクルについて">Q. サブスクリプションECSのライフサイクルについて</a></li>
+<li><a href="#q-rdscalとクライアントcalの必要性について">Q. RDSCALとクライアントCALの必要性について</a></li>
+<li><a href="#q-ecsのデフォルトタイムゾーンについて">Q. ECSのデフォルトタイムゾーンについて</a></li>
+<li><a href="#q-スナップショット取得時の性能影響について">Q. スナップショット取得時の性能影響について</a></li>
+<li><a href="#q-購入可能な従量課金インスタンスの上限について">Q. 購入可能な従量課金インスタンスの上限について</a></li>
+<li><a href="#q-25番ポートの制限について">Q. 25番ポートの制限について</a></li>
+<li><a href="#q-icp必要性の判断方法について">Q. ICP必要性の判断方法について</a></li>
+<li><a href="#q-インスタンススペックのアップグレード方法について">Q. インスタンススペックのアップグレード方法について</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#ネットワーク">ネットワーク</a>
+<ul>
+<li>
+<ul>
+<li><a href="#q-vpcとvswitchの変更方法について">Q. VPCとVswitchの変更方法について</a></li>
+<li><a href="#q-vpcで指定可能なcidrブロックについて">Q. VPCで指定可能なCIDRブロックについて</a></li>
+<li><a href="#q-eipとパブリックipの違いについて">Q. EIPとパブリックIPの違いについて</a></li>
+<li><a href="#q-eipとパブリックipの帯域幅の変更方法について">Q. EIPとパブリックIPの帯域幅の変更方法について</a></li>
+<li><a href="#q-プライベートipの変更方法について">Q. プライベートIPの変更方法について</a></li>
+<li><a href="#q-インバウンドとアウトバウンド帯域幅の制限値について">Q. インバウンドとアウトバウンド帯域幅の制限値について</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#イメージ">イメージ</a>
+<ul>
+<li>
+<ul>
+<li><a href="#q-イメージのインポート方法について">Q. イメージのインポート方法について</a></li>
+<li><a href="#q-クラウド移転ツールについて">Q. クラウド移転ツールについて</a></li>
+<li><a href="#q-イメージのエクスポート方法について">Q. イメージのエクスポート方法について</a></li>
+<li><a href="#q-イメージのリージョン間コピー方法について">Q. イメージのリージョン間コピー方法について</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#ディスク">ディスク</a>
+<ul>
+<li>
+<ul>
+<li><a href="#q-システムディスクとデータディスクの違いについて">Q. システムディスクとデータディスクの違いについて</a></li>
+<li><a href="#q-クラウドディスクの拡張方法について">Q. クラウドディスクの拡張方法について</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#vnc">VNC</a>
+<ul>
+<li>
+<ul>
+<li><a href="#q-vncで一部記号入力できない事象について">Q. VNCで一部記号入力できない事象について</a></li>
+<li><a href="#q-vncパスワードとecsパスワードの違いと再設定方法について">Q. VNCパスワードとECSパスワードの違いと再設定方法について</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#sg">SG</a>
+<ul>
+<li>
+<ul>
+<li><a href="#q-インバウンドとアウトバウンドのデフォルト動作について">Q. インバウンドとアウトバウンドのデフォルト動作について</a></li>
+<li><a href="#q-同じセキュリティグループ内のアクセス制限について">Q. 同じセキュリティグループ内のアクセス制限について</a></li>
+<li><a href="#q-セキュリティグルールの適用順位について">Q. セキュリティグルールの適用順位について</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -364,7 +433,7 @@
           
             <h1>
               
-              第1章 ECSインスタンスの作成
+              ECS
             </h1>
           
 
@@ -372,144 +441,127 @@
 
 
 
-<p>この記事では、Terraformを使用してECSインスタンスを作成する方法について説明します。</p>
-
-<ol>
-<li><p>VPCとVSwitchを作成します</p>
-
-<ol>
-<li><p>terraform.tfファイルを作成して次のように入力し、現在の実行ディレクトリに保存します。</p>
-
-<pre><code>resource &quot;alicloud_vpc&quot; &quot;vpc&quot; {
-  name       = &quot;tf_test_foo&quot;
-  cidr_block = &quot;172.16.0.0/12&quot;
-}
-        
-resource &quot;alicloud_vswitch&quot; &quot;vsw&quot; {
-  vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
-  cidr_block        = &quot;172.16.0.0/21&quot;
-  availability_zone = &quot;cn-beijing-b&quot;
-}
-</code></pre></li>
-
-<li><p>作成を開始するために <code>terraform apply</code>を実行してください。</p></li>
-
-<li><p>作成したVPCとVSwitchを表示するために <code>terraform show</code>を実行します。</p>
-
-<p>VPCコンソールにログオンして、VPCとVSwitchの属性を表示することもできます。</p></li>
-</ol></li>
-
-<li><p>セキュリティグループを作成し、前の手順で作成したVPCに適用します。</p>
-
-<ol>
-<li><p>terraform.tfファイルに以下を追加します。</p>
-
-<pre><code>resource &quot;alicloud_security_group&quot; &quot;default&quot; {
-  name = &quot;default&quot;
-  vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
-}
-        
-resource &quot;alicloud_security_group_rule&quot; &quot;allow_all_tcp&quot; {
-  type              = &quot;ingress&quot;
-  ip_protocol       = &quot;tcp&quot;
-  nic_type          = &quot;intranet&quot;
-  policy            = &quot;accept&quot;
-  port_range        = &quot;1/65535&quot;
-  priority          = 1
-  security_group_id = &quot;${alicloud_security_group.default.id}&quot;
-  cidr_ip           = &quot;0.0.0.0/0&quot;
-}
-</code></pre></li>
-
-<li><p>作成を開始するために <code>terraform apply</code>を実行してください。</p></li>
-
-<li><p><code>terraform show</code>を実行して、作成されたセキュリティグループとセキュリティグループのルールを表示します。</p>
-
-<p>セキュリティグループとセキュリティグループのルールを表示するためにECSコンソールにログオンすることもできます。</p></li>
-</ol></li>
-
-<li><p>ECSインスタンスを作成します。</p>
-
-<ol>
-<li><p>terraform.tfファイルに以下を追加します:</p>
-
-<pre><code>resource &quot;alicloud_instance&quot; &quot;instance&quot; {
-  # cn-beijing
-  availability_zone = &quot;cn-beijing-b&quot;
-  security_groups = [&quot;${alicloud_security_group.default.*.id}&quot;]
-        
-  # series III
-  instance_type        = &quot;ecs.n2.small&quot;
-  system_disk_category = &quot;cloud_efficiency&quot;
-  image_id             = &quot;ubuntu_140405_64_40G_cloudinit_20161115.vhd&quot;
-  instance_name        = &quot;test_foo&quot;
-  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
-  internet_max_bandwidth_out = 10
-  password = &quot;&lt;replace_with_your_password&gt;&quot;
-}
-</code></pre>
-
-<p><strong>Note:</strong></p>
-
-<ul>
-<li>上記の例では、「internet_max_bandwidth_out = 10」が指定されています。そのため、インスタンスにはパブリックIPが自動的に割り当てられます。</li>
-<li>パラメータの詳細な説明については、<a href="https://www.terraform.io/docs/providers/alicloud/d/instances.html">Alibaba Cloudのパラメータの説明</a>を参照してください。</li>
-</ul></li>
-
-<li><p>作成を開始するために <code>terraform apply</code>を実行してください。</p></li>
-
-<li><p>作成したECSインスタンスを表示するために <code>terraform show</code>を実行してください。</p></li>
-
-<li><p>ssh root@<publicip\>を実行して、ECSインスタンスにアクセスするためのパスワードを入力します。</p>
-
-<pre><code>provider &quot;alicloud&quot; {}
-  
-resource &quot;alicloud_vpc&quot; &quot;vpc&quot; {
-name       = &quot;tf_test_foo&quot;
-cidr_block = &quot;172.16.0.0/12&quot;
-}
-
-resource &quot;alicloud_vswitch&quot; &quot;vsw&quot; {
-vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
-cidr_block        = &quot;172.16.0.0/21&quot;
-availability_zone = &quot;cn-beijing-b&quot;
-}
 
 
-resource &quot;alicloud_security_group&quot; &quot;default&quot; {
-name = &quot;default&quot;
-vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
-}
+<h2 id="一般仕様">一般仕様</h2>
 
+<h4 id="q-ゾーンの識別文字のマッピング仕様について">Q. ゾーンの識別文字のマッピング仕様について</h4>
 
-resource &quot;alicloud_instance&quot; &quot;instance&quot; {
-# cn-beijing
-availability_zone = &quot;cn-beijing-b&quot;
-security_groups = [&quot;${alicloud_security_group.default.*.id}&quot;]
+<p>A</p>
 
-# series III
-instance_type        = &quot;ecs.n2.small&quot;
-system_disk_category = &quot;cloud_efficiency&quot;
-image_id             = &quot;ubuntu_140405_64_40G_cloudinit_20161115.vhd&quot;
-instance_name        = &quot;test_foo&quot;
-vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
-internet_max_bandwidth_out = 10
-}
+<h4 id="q-1つのアカウント-リージョン配下のecs購入台数制限について">Q. 1つのアカウント/リージョン配下のECS購入台数制限について</h4>
 
+<p>A</p>
 
-resource &quot;alicloud_security_group_rule&quot; &quot;allow_all_tcp&quot; {
-type              = &quot;ingress&quot;
-ip_protocol       = &quot;tcp&quot;
-nic_type          = &quot;intranet&quot;
-policy            = &quot;accept&quot;
-port_range        = &quot;1/65535&quot;
-priority          = 1
-security_group_id = &quot;${alicloud_security_group.default.id}&quot;
-cidr_ip           = &quot;0.0.0.0/0&quot;
-}
-</code></pre></li>
-</ol></li>
-</ol>
+<h4 id="q-サブスクリプションecsのライフサイクルについて">Q. サブスクリプションECSのライフサイクルについて</h4>
+
+<p>A</p>
+
+<h4 id="q-rdscalとクライアントcalの必要性について">Q. RDSCALとクライアントCALの必要性について</h4>
+
+<p>A</p>
+
+<h4 id="q-ecsのデフォルトタイムゾーンについて">Q. ECSのデフォルトタイムゾーンについて</h4>
+
+<p>A</p>
+
+<h4 id="q-スナップショット取得時の性能影響について">Q. スナップショット取得時の性能影響について</h4>
+
+<p>A</p>
+
+<h4 id="q-購入可能な従量課金インスタンスの上限について">Q. 購入可能な従量課金インスタンスの上限について</h4>
+
+<p>A</p>
+
+<h4 id="q-25番ポートの制限について">Q. 25番ポートの制限について</h4>
+
+<p>A</p>
+
+<h4 id="q-icp必要性の判断方法について">Q. ICP必要性の判断方法について</h4>
+
+<p>A</p>
+
+<h4 id="q-インスタンススペックのアップグレード方法について">Q. インスタンススペックのアップグレード方法について</h4>
+
+<p>A</p>
+
+<h2 id="ネットワーク">ネットワーク</h2>
+
+<h4 id="q-vpcとvswitchの変更方法について">Q. VPCとVswitchの変更方法について</h4>
+
+<p>A</p>
+
+<h4 id="q-vpcで指定可能なcidrブロックについて">Q. VPCで指定可能なCIDRブロックについて</h4>
+
+<p>A</p>
+
+<h4 id="q-eipとパブリックipの違いについて">Q. EIPとパブリックIPの違いについて</h4>
+
+<p>A</p>
+
+<h4 id="q-eipとパブリックipの帯域幅の変更方法について">Q. EIPとパブリックIPの帯域幅の変更方法について</h4>
+
+<p>A</p>
+
+<h4 id="q-プライベートipの変更方法について">Q. プライベートIPの変更方法について</h4>
+
+<p>A</p>
+
+<h4 id="q-インバウンドとアウトバウンド帯域幅の制限値について">Q. インバウンドとアウトバウンド帯域幅の制限値について</h4>
+
+<p>A</p>
+
+<h2 id="イメージ">イメージ</h2>
+
+<h4 id="q-イメージのインポート方法について">Q. イメージのインポート方法について</h4>
+
+<p>A</p>
+
+<h4 id="q-クラウド移転ツールについて">Q. クラウド移転ツールについて</h4>
+
+<p>A</p>
+
+<h4 id="q-イメージのエクスポート方法について">Q. イメージのエクスポート方法について</h4>
+
+<p>A</p>
+
+<h4 id="q-イメージのリージョン間コピー方法について">Q. イメージのリージョン間コピー方法について</h4>
+
+<p>A</p>
+
+<h2 id="ディスク">ディスク</h2>
+
+<h4 id="q-システムディスクとデータディスクの違いについて">Q. システムディスクとデータディスクの違いについて</h4>
+
+<p>A</p>
+
+<h4 id="q-クラウドディスクの拡張方法について">Q. クラウドディスクの拡張方法について</h4>
+
+<p>A</p>
+
+<h2 id="vnc">VNC</h2>
+
+<h4 id="q-vncで一部記号入力できない事象について">Q. VNCで一部記号入力できない事象について</h4>
+
+<p>A</p>
+
+<h4 id="q-vncパスワードとecsパスワードの違いと再設定方法について">Q. VNCパスワードとECSパスワードの違いと再設定方法について</h4>
+
+<p>A</p>
+
+<h2 id="sg">SG</h2>
+
+<h4 id="q-インバウンドとアウトバウンドのデフォルト動作について">Q. インバウンドとアウトバウンドのデフォルト動作について</h4>
+
+<p>A</p>
+
+<h4 id="q-同じセキュリティグループ内のアクセス制限について">Q. 同じセキュリティグループ内のアクセス制限について</h4>
+
+<p>A</p>
+
+<h4 id="q-セキュリティグルールの適用順位について">Q. セキュリティグルールの適用順位について</h4>
+
+<p>A</p>
 
 
 <footer class=" footline" >
@@ -548,8 +600,58 @@ cidr_ip           = &quot;0.0.0.0/0&quot;
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -591,54 +693,6 @@ cidr_ip           = &quot;0.0.0.0/0&quot;
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -663,7 +717,6 @@ cidr_ip           = &quot;0.0.0.0/0&quot;
             
                 
                     
-                    
                 
                 
 
@@ -676,7 +729,6 @@ cidr_ip           = &quot;0.0.0.0/0&quot;
             
             
                 
-                    
                     
                 
                 
@@ -701,10 +753,10 @@ cidr_ip           = &quot;0.0.0.0/0&quot;
 	 
 	 
 		
-			<a class="nav nav-prev" href="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/" title="最初の手引き"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/tech-docs/faqmore/" title="FAQ&amp;More"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/tech-docs/faqmore/" title="FAQ&amp;More" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/tech-docs/faqmore/management/" title="管理" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

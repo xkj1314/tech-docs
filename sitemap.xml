@@ -3,13 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://sbcloud.github.io/tech-docs/alibabacloud%E3%81%AE%E6%B4%BB%E7%94%A8/</loc>
-    <lastmod>2019-05-14T10:37:37+09:00</lastmod>
+    <loc>https://sbcloud.github.io/tech-docs/faqmore/ecs/</loc>
+    <lastmod>2019-06-04T15:47:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/faqmore/</loc>
+    <lastmod>2019-06-04T15:47:38+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sbcloud.github.io/tech-docs/</loc>
+    <lastmod>2019-06-04T15:47:38+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/faqmore/management/</loc>
+    <lastmod>2019-06-04T15:47:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbcloud.github.io/tech-docs/alibabacloud%E3%81%AE%E6%B4%BB%E7%94%A8/</loc>
     <lastmod>2019-05-14T10:37:37+09:00</lastmod>
     <priority>0</priority>
   </url>

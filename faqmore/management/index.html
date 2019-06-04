@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/tech-docs/images/favicon.png" type="image/png">
 
-    <title>第1章 ECSインスタンスの作成 :: SBCloud Documentation</title>
+    <title>管理 :: SBCloud Documentation</title>
 
     
     <link href="/tech-docs/css/nucleus.css?1559632606" rel="stylesheet">
@@ -67,7 +67,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/">
+  <body class="" data-url="/tech-docs/faqmore/management/">
     <img src="http://localhost/SBC_HEADER.png" alt="ヘッダー">
 
     <nav id="sidebar" class="">
@@ -87,7 +87,7 @@
   
     
     <li data-nav-id="/tech-docs/faqmore/" title="FAQ&amp;More" class="dd-item 
-        
+        parent
         
         ">
       <a href="/tech-docs/faqmore/">
@@ -129,7 +129,7 @@
  
   
     
-      <li data-nav-id="/tech-docs/faqmore/management/" title="管理" class="dd-item ">
+      <li data-nav-id="/tech-docs/faqmore/management/" title="管理" class="dd-item active">
         <a href="/tech-docs/faqmore/management/">
         管理
         
@@ -244,7 +244,7 @@
   
     
     <li data-nav-id="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/" title="最初の手引き" class="dd-item 
-        parent
+        
         
         ">
       <a href="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/">
@@ -267,7 +267,7 @@
  
   
     
-      <li data-nav-id="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/" title="第1章 ECSインスタンスの作成" class="dd-item active">
+      <li data-nav-id="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/" title="第1章 ECSインスタンスの作成" class="dd-item ">
         <a href="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/">
         第1章 ECSインスタンスの作成
         
@@ -335,7 +335,7 @@
             
           
           
-            <a href='/tech-docs/'>SBCloud Documentation</a> > <a href='/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/'>最初の手引き</a> > 第1章 ECSインスタンスの作成
+            <a href='/tech-docs/'>SBCloud Documentation</a> > <a href='/tech-docs/faqmore/'>FAQ&More</a> > 管理
           
          
           
@@ -348,7 +348,46 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#料金">料金</a>
+<ul>
+<li>
+<ul>
+<li><a href="#q-マイクロチャージの仕様について">Q. マイクロチャージの仕様について</a></li>
+<li><a href="#q-コンソールに表示される月の使用金額と実際請求額の差分について">Q. コンソールに表示される月の使用金額と実際請求額の差分について</a></li>
+<li><a href="#q-月の従量課金が10円未満場合の課金方法について">Q. 月の従量課金が10円未満場合の課金方法について</a></li>
+<li><a href="#q-サブスクリプション及び従量課金の請求時期について">Q. サブスクリプション及び従量課金の請求時期について</a></li>
+<li><a href="#q-サブスクリプション及び従量課金の請求失敗後の動作について">Q. サブスクリプション及び従量課金の請求失敗後の動作について</a></li>
+<li><a href="#q-利用明細のダウンロード可能時期と見方について">Q. 利用明細のダウンロード可能時期と見方について</a></li>
+<li><a href="#q-請求書払いの申請方法について">Q. 請求書払いの申請方法について</a></li>
+<li><a href="#q-請求書払いの締切日と発行日について">Q. 請求書払いの締切日と発行日について</a></li>
+<li><a href="#q-インスタンス自動更新失敗後の動作について">Q. インスタンス自動更新失敗後の動作について</a></li>
+<li><a href="#q-自動更新offの状態で有効期限切れ後の更新方法について">Q. 自動更新OFFの状態で有効期限切れ後の更新方法について</a></li>
+<li><a href="#q-サブスクリプションインスタンスの削除方法について">Q. サブスクリプションインスタンスの削除方法について</a></li>
+<li><a href="#q-無料トライアルクーポンの入手方法と確認場所について">Q. 無料トライアルクーポンの入手方法と確認場所について</a></li>
+<li><a href="#q-クーポンで支払い可能な範囲について">Q. クーポンで支払い可能な範囲について</a></li>
+<li><a href="#q-複数クーポンの消費順番について">Q. 複数クーポンの消費順番について</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#アカウント">アカウント</a>
+<ul>
+<li>
+<ul>
+<li><a href="#q-totp認証利用できなくなった時の対応方法について">Q. TOTP認証利用できなくなった時の対応方法について</a></li>
+<li><a href="#q-メールアドレスの変更方法について">Q. メールアドレスの変更方法について</a></li>
+<li><a href="#q-クレジットカードの変更方法について">Q. クレジットカードの変更方法について</a></li>
+<li><a href="#q-アカウント登録氏名-社名-の変更方法について">Q. アカウント登録氏名（社名）の変更方法について</a></li>
+<li><a href="#q-コンソール自動ログアウトの仕様について">Q. コンソール自動ログアウトの仕様について</a></li>
+<li><a href="#q-サポートセンターの対応範囲について">Q. サポートセンターの対応範囲について</a></li>
+<li><a href="#q-チケット起票の推奨記載内容について">Q. チケット起票の推奨記載内容について</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -364,7 +403,7 @@
           
             <h1>
               
-              第1章 ECSインスタンスの作成
+              管理
             </h1>
           
 
@@ -372,144 +411,103 @@
 
 
 
-<p>この記事では、Terraformを使用してECSインスタンスを作成する方法について説明します。</p>
-
-<ol>
-<li><p>VPCとVSwitchを作成します</p>
-
-<ol>
-<li><p>terraform.tfファイルを作成して次のように入力し、現在の実行ディレクトリに保存します。</p>
-
-<pre><code>resource &quot;alicloud_vpc&quot; &quot;vpc&quot; {
-  name       = &quot;tf_test_foo&quot;
-  cidr_block = &quot;172.16.0.0/12&quot;
-}
-        
-resource &quot;alicloud_vswitch&quot; &quot;vsw&quot; {
-  vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
-  cidr_block        = &quot;172.16.0.0/21&quot;
-  availability_zone = &quot;cn-beijing-b&quot;
-}
-</code></pre></li>
-
-<li><p>作成を開始するために <code>terraform apply</code>を実行してください。</p></li>
-
-<li><p>作成したVPCとVSwitchを表示するために <code>terraform show</code>を実行します。</p>
-
-<p>VPCコンソールにログオンして、VPCとVSwitchの属性を表示することもできます。</p></li>
-</ol></li>
-
-<li><p>セキュリティグループを作成し、前の手順で作成したVPCに適用します。</p>
-
-<ol>
-<li><p>terraform.tfファイルに以下を追加します。</p>
-
-<pre><code>resource &quot;alicloud_security_group&quot; &quot;default&quot; {
-  name = &quot;default&quot;
-  vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
-}
-        
-resource &quot;alicloud_security_group_rule&quot; &quot;allow_all_tcp&quot; {
-  type              = &quot;ingress&quot;
-  ip_protocol       = &quot;tcp&quot;
-  nic_type          = &quot;intranet&quot;
-  policy            = &quot;accept&quot;
-  port_range        = &quot;1/65535&quot;
-  priority          = 1
-  security_group_id = &quot;${alicloud_security_group.default.id}&quot;
-  cidr_ip           = &quot;0.0.0.0/0&quot;
-}
-</code></pre></li>
-
-<li><p>作成を開始するために <code>terraform apply</code>を実行してください。</p></li>
-
-<li><p><code>terraform show</code>を実行して、作成されたセキュリティグループとセキュリティグループのルールを表示します。</p>
-
-<p>セキュリティグループとセキュリティグループのルールを表示するためにECSコンソールにログオンすることもできます。</p></li>
-</ol></li>
-
-<li><p>ECSインスタンスを作成します。</p>
-
-<ol>
-<li><p>terraform.tfファイルに以下を追加します:</p>
-
-<pre><code>resource &quot;alicloud_instance&quot; &quot;instance&quot; {
-  # cn-beijing
-  availability_zone = &quot;cn-beijing-b&quot;
-  security_groups = [&quot;${alicloud_security_group.default.*.id}&quot;]
-        
-  # series III
-  instance_type        = &quot;ecs.n2.small&quot;
-  system_disk_category = &quot;cloud_efficiency&quot;
-  image_id             = &quot;ubuntu_140405_64_40G_cloudinit_20161115.vhd&quot;
-  instance_name        = &quot;test_foo&quot;
-  vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
-  internet_max_bandwidth_out = 10
-  password = &quot;&lt;replace_with_your_password&gt;&quot;
-}
-</code></pre>
-
-<p><strong>Note:</strong></p>
-
-<ul>
-<li>上記の例では、「internet_max_bandwidth_out = 10」が指定されています。そのため、インスタンスにはパブリックIPが自動的に割り当てられます。</li>
-<li>パラメータの詳細な説明については、<a href="https://www.terraform.io/docs/providers/alicloud/d/instances.html">Alibaba Cloudのパラメータの説明</a>を参照してください。</li>
-</ul></li>
-
-<li><p>作成を開始するために <code>terraform apply</code>を実行してください。</p></li>
-
-<li><p>作成したECSインスタンスを表示するために <code>terraform show</code>を実行してください。</p></li>
-
-<li><p>ssh root@<publicip\>を実行して、ECSインスタンスにアクセスするためのパスワードを入力します。</p>
-
-<pre><code>provider &quot;alicloud&quot; {}
-  
-resource &quot;alicloud_vpc&quot; &quot;vpc&quot; {
-name       = &quot;tf_test_foo&quot;
-cidr_block = &quot;172.16.0.0/12&quot;
-}
-
-resource &quot;alicloud_vswitch&quot; &quot;vsw&quot; {
-vpc_id            = &quot;${alicloud_vpc.vpc.id}&quot;
-cidr_block        = &quot;172.16.0.0/21&quot;
-availability_zone = &quot;cn-beijing-b&quot;
-}
 
 
-resource &quot;alicloud_security_group&quot; &quot;default&quot; {
-name = &quot;default&quot;
-vpc_id = &quot;${alicloud_vpc.vpc.id}&quot;
-}
+<h2 id="料金">料金</h2>
 
+<h4 id="q-マイクロチャージの仕様について">Q. マイクロチャージの仕様について</h4>
 
-resource &quot;alicloud_instance&quot; &quot;instance&quot; {
-# cn-beijing
-availability_zone = &quot;cn-beijing-b&quot;
-security_groups = [&quot;${alicloud_security_group.default.*.id}&quot;]
+<p>クレジットカードをご登録またはご追加の際に、マイクロチャージというクレジットカードの有効性を確認するプロセスにより、少額の課金（通常は100円以内）が発生します。
+該当課金は、AlibabaCloudから24時間以内にカードに払い戻ししますが、カード発行会社により、ご利用のカードに対する払い戻しをご確認いただけるまでに 30 日程度を要する場合があります。</p>
 
-# series III
-instance_type        = &quot;ecs.n2.small&quot;
-system_disk_category = &quot;cloud_efficiency&quot;
-image_id             = &quot;ubuntu_140405_64_40G_cloudinit_20161115.vhd&quot;
-instance_name        = &quot;test_foo&quot;
-vswitch_id = &quot;${alicloud_vswitch.vsw.id}&quot;
-internet_max_bandwidth_out = 10
-}
+<p>実際にAlibabaCloudが領収してないため、請求書の発行はできかねます。
+また、カード会社の請求締切日により、カード会社からお客様に請求してから翌月に返金する可能性もあります。詳細はカード会社にお問合せください。</p>
 
+<h4 id="q-コンソールに表示される月の使用金額と実際請求額の差分について">Q. コンソールに表示される月の使用金額と実際請求額の差分について</h4>
 
-resource &quot;alicloud_security_group_rule&quot; &quot;allow_all_tcp&quot; {
-type              = &quot;ingress&quot;
-ip_protocol       = &quot;tcp&quot;
-nic_type          = &quot;intranet&quot;
-policy            = &quot;accept&quot;
-port_range        = &quot;1/65535&quot;
-priority          = 1
-security_group_id = &quot;${alicloud_security_group.default.id}&quot;
-cidr_ip           = &quot;0.0.0.0/0&quot;
-}
-</code></pre></li>
-</ol></li>
-</ol>
+<p>コンソールに表示される月の使用金額と実際の請求額に差分が発生する場合があります。これは、従量課金インスタンス料金の合計方法によるものです。</p>
+
+<p>従量課金インスタンスに発生した料金は、1時間1レコードとして小数点以下4桁まで記録されます。
+コンソールに表示される月の使用金額に、上記全レコードの合計値が表示されます。
+一方、実際請求額の計算では、先に製品ごとに発生した料金（製品ごとの全レコード）を合計し、小数点以下を切り捨てた後、再度合計するため、コンソールに表示される月の使用金額より低い場合があります。</p>
+
+<h4 id="q-月の従量課金が10円未満場合の課金方法について">Q. 月の従量課金が10円未満場合の課金方法について</h4>
+
+<p>A:</p>
+
+<h4 id="q-サブスクリプション及び従量課金の請求時期について">Q. サブスクリプション及び従量課金の請求時期について</h4>
+
+<p>A:</p>
+
+<h4 id="q-サブスクリプション及び従量課金の請求失敗後の動作について">Q. サブスクリプション及び従量課金の請求失敗後の動作について</h4>
+
+<p>A:</p>
+
+<h4 id="q-利用明細のダウンロード可能時期と見方について">Q. 利用明細のダウンロード可能時期と見方について</h4>
+
+<p>A:</p>
+
+<h4 id="q-請求書払いの申請方法について">Q. 請求書払いの申請方法について</h4>
+
+<p>A:</p>
+
+<h4 id="q-請求書払いの締切日と発行日について">Q. 請求書払いの締切日と発行日について</h4>
+
+<p>A:</p>
+
+<h4 id="q-インスタンス自動更新失敗後の動作について">Q. インスタンス自動更新失敗後の動作について</h4>
+
+<p>A:</p>
+
+<h4 id="q-自動更新offの状態で有効期限切れ後の更新方法について">Q. 自動更新OFFの状態で有効期限切れ後の更新方法について</h4>
+
+<p>A:</p>
+
+<h4 id="q-サブスクリプションインスタンスの削除方法について">Q. サブスクリプションインスタンスの削除方法について</h4>
+
+<p>A:</p>
+
+<h4 id="q-無料トライアルクーポンの入手方法と確認場所について">Q. 無料トライアルクーポンの入手方法と確認場所について</h4>
+
+<p>A:</p>
+
+<h4 id="q-クーポンで支払い可能な範囲について">Q. クーポンで支払い可能な範囲について</h4>
+
+<p>A:</p>
+
+<h4 id="q-複数クーポンの消費順番について">Q. 複数クーポンの消費順番について</h4>
+
+<p>A:</p>
+
+<h2 id="アカウント">アカウント</h2>
+
+<h4 id="q-totp認証利用できなくなった時の対応方法について">Q. TOTP認証利用できなくなった時の対応方法について</h4>
+
+<p>A</p>
+
+<h4 id="q-メールアドレスの変更方法について">Q. メールアドレスの変更方法について</h4>
+
+<p>A</p>
+
+<h4 id="q-クレジットカードの変更方法について">Q. クレジットカードの変更方法について</h4>
+
+<p>A</p>
+
+<h4 id="q-アカウント登録氏名-社名-の変更方法について">Q. アカウント登録氏名（社名）の変更方法について</h4>
+
+<p>a</p>
+
+<h4 id="q-コンソール自動ログアウトの仕様について">Q. コンソール自動ログアウトの仕様について</h4>
+
+<p>a</p>
+
+<h4 id="q-サポートセンターの対応範囲について">Q. サポートセンターの対応範囲について</h4>
+
+<p>a</p>
+
+<h4 id="q-チケット起票の推奨記載内容について">Q. チケット起票の推奨記載内容について</h4>
+
+<p>a1</p>
 
 
 <footer class=" footline" >
@@ -548,6 +546,59 @@ cidr_ip           = &quot;0.0.0.0/0&quot;
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                         
                         
                     
@@ -591,54 +642,6 @@ cidr_ip           = &quot;0.0.0.0/0&quot;
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -663,7 +666,6 @@ cidr_ip           = &quot;0.0.0.0/0&quot;
             
                 
                     
-                    
                 
                 
 
@@ -676,7 +678,6 @@ cidr_ip           = &quot;0.0.0.0/0&quot;
             
             
                 
-                    
                     
                 
                 
@@ -701,10 +702,10 @@ cidr_ip           = &quot;0.0.0.0/0&quot;
 	 
 	 
 		
-			<a class="nav nav-prev" href="/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/" title="最初の手引き"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/tech-docs/faqmore/ecs/" title="ECS"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/tech-docs/faqmore/" title="FAQ&amp;More" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/tech-docs/alibabacloud%E3%81%AE%E6%B4%BB%E7%94%A8/" title="AlibabaCloudの活用" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
