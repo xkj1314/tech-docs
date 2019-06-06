@@ -5,45 +5,15 @@
     <link>https://sbcloud.github.io/tech-docs/faqmore/</link>
     <description>Recent content in FAQ&amp;More on SBCloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 04 Jun 2019 15:47:38 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 04 Apr 2019 15:47:38 +0900</lastBuildDate>
     
 	<atom:link href="https://sbcloud.github.io/tech-docs/faqmore/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>ECS</title>
-      <link>https://sbcloud.github.io/tech-docs/faqmore/ecs/</link>
-      <pubDate>Tue, 04 Jun 2019 15:47:38 +0900</pubDate>
-      
-      <guid>https://sbcloud.github.io/tech-docs/faqmore/ecs/</guid>
-      <description>一般仕様 Q. ゾーンの識別文字のマッピング仕様について A
-Q. 1つのアカウント/リージョン配下のECS購入台数制限について A
-Q. サブスクリプションECSのライフサイクルについて A
-Q. RDSCALとクライアントCALの必要性について A
-Q. ECSのデフォルトタイムゾーンについて A
-Q. スナップショット取得時の性能影響について A
-Q. 購入可能な従量課金インスタンスの上限について A
-Q. 25番ポートの制限について A
-Q. ICP必要性の判断方法について A
-Q. インスタンススペックのアップグレード方法について A
-ネットワーク Q. VPCとVswitchの変更方法について A
-Q. VPCで指定可能なCIDRブロックについて A
-Q. EIPとパブリックIPの違いについて A
-Q. EIPとパブリックIPの帯域幅の変更方法について A
-Q. プライベートIPの変更方法について A
-Q. インバウンドとアウトバウンド帯域幅の制限値について A
-イメージ Q. イメージのインポート方法について A
-Q. クラウド移転ツールについて A
-Q. イメージのエクスポート方法について A
-Q. イメージのリージョン間コピー方法について A
-ディスク Q. システムディスクとデータディスクの違いについて A
-Q. クラウドディスクの拡張方法について A</description>
-    </item>
-    
-    <item>
-      <title>管理</title>
+      <title>アカウント管理</title>
       <link>https://sbcloud.github.io/tech-docs/faqmore/management/</link>
-      <pubDate>Tue, 04 Jun 2019 15:47:38 +0900</pubDate>
+      <pubDate>Thu, 04 Apr 2019 15:47:38 +0900</pubDate>
       
       <guid>https://sbcloud.github.io/tech-docs/faqmore/management/</guid>
       <description>料金 Q. マイクロチャージの仕様について クレジットカードをご登録またはご追加の際に、マイクロチャージというクレジットカードの有効性を確認するプロセスにより、少額の課金（通常は100円以内）が発生します。 該当課金は、AlibabaCloudから24時間以内にカードに払い戻ししますが、カード発行会社により、ご利用のカードに対する払い戻しをご確認いただけるまでに 30 日程度を要する場合があります。
@@ -68,6 +38,36 @@ Q. クレジットカードの変更方法について A
 Q. アカウント登録氏名（社名）の変更方法について a
 Q. コンソール自動ログアウトの仕様について a
 Q. サポートセンターの対応範囲について a</description>
+    </item>
+    
+    <item>
+      <title>ECS</title>
+      <link>https://sbcloud.github.io/tech-docs/faqmore/ecs/</link>
+      <pubDate>Wed, 03 Apr 2019 15:47:38 +0900</pubDate>
+      
+      <guid>https://sbcloud.github.io/tech-docs/faqmore/ecs/</guid>
+      <description>一般仕様 Q. ゾーンの識別文字のマッピング仕様について A
+Q. 1つのアカウント/リージョン配下のECS購入台数制限について A
+Q. サブスクリプションECSのライフサイクルについて A
+Q. RDSCALとクライアントCALの必要性について A
+Q. ECSのデフォルトタイムゾーンについて A
+Q. スナップショット取得時の性能影響について A
+Q. 購入可能な従量課金インスタンスの上限について A
+Q. 25番ポートの制限について A
+Q. ICP必要性の判断方法について A
+Q. インスタンススペックのアップグレード方法について A
+ネットワーク Q. VPCとVswitchの変更方法について A
+Q. VPCで指定可能なCIDRブロックについて A
+Q. EIPとパブリックIPの違いについて A
+Q. EIPとパブリックIPの帯域幅の変更方法について A
+Q. プライベートIPの変更方法について A
+Q. インバウンドとアウトバウンド帯域幅の制限値について A
+イメージ Q. イメージのインポート方法について A
+Q. クラウド移転ツールについて A
+Q. イメージのエクスポート方法について A
+Q. イメージのリージョン間コピー方法について A
+ディスク Q. システムディスクとデータディスクの違いについて A
+Q. クラウドディスクの拡張方法について A</description>
     </item>
     
   </channel>

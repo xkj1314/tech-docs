@@ -5,7 +5,7 @@
     <link>https://sbcloud.github.io/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/</link>
     <description>Recent content in 最初の手引き on SBCloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 May 2019 12:30:18 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jun 2019 12:30:18 +0800</lastBuildDate>
     
 	<atom:link href="https://sbcloud.github.io/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>第1章 ECSインスタンスの作成</title>
       <link>https://sbcloud.github.io/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/</link>
-      <pubDate>Sun, 12 May 2019 12:30:18 +0800</pubDate>
+      <pubDate>Wed, 05 Jun 2019 12:30:18 +0800</pubDate>
       
       <guid>https://sbcloud.github.io/tech-docs/%E6%9C%80%E5%88%9D%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/create-virtual-servers/</guid>
       <description>この記事では、Terraformを使用してECSインスタンスを作成する方法について説明します。
