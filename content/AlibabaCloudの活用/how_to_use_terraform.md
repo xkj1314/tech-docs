@@ -1,6 +1,6 @@
 ---
 title: "第3章 Terraform の基本"
-date: 2019-04-14T10:37:37+09:00
+date: 2019-05-15T10:37:37+09:00
 draft: false
 ---
 本章では Terraform の基本、使い方を学びます。 簡単なWebサーバを立ち上げながら、Terraformの流れや中身を確認します。
